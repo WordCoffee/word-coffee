@@ -1,0 +1,23 @@
+/*
+  This CSS file is primarily used to apply the custom 'Inter' font globally.
+  All other styling is handled directly in the HTML using Tailwind CSS utility classes.
+*/
+
+body {
+    /* Ensures the Inter font is used across the entire website */
+    font-family: 'Inter', sans-serif;
+}
+
+/*
+  Any custom styles that cannot be achieved with Tailwind utility classes,
+  or specific overrides for a truly custom look inspired by boldtuesday.com,
+  would be added here. However, for a basic and maintainable setup,
+  relying on Tailwind's rich set of classes is often preferred.
+*/
+
+/* Example of a very specific custom rule if needed (e.g., a unique gradient not in Tailwind's defaults)
+.custom-gradient-button {
+    background: linear-gradient(45deg, #FF00FF, #00FFFF);
+    // Add other button styles
+}
+*/
