@@ -53,8 +53,15 @@
     <section id="moms-collection" class="py-24 bg-white px-4">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div class="relative flex justify-center items-center p-4 md:order-2">
-                <!-- Placeholder image for Moms deck - replace with actual image when available -->
-                <img src="https://placehold.co/500x500/e0e0e0/333333?text=Word+Coffee+Moms+Deck" alt="Word Coffee for Moms Card Deck" class="rounded-xl shadow-lg w-full max-w-md">
+                <!-- Main image for Moms deck -->
+                <img src="Mom/mom-main.png" onerror="this.onerror=null;this.src='https://placehold.co/500x500/e0e0e0/333333?text=Word+Coffee+Moms+Deck';" alt="Word Coffee for Moms Card Deck" class="rounded-xl shadow-lg w-full max-w-md hidden md:block">
+                <!-- Grid for additional Mom product views -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 md:mt-0">
+                    <img src="Mom/mom-product-1.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+1';" alt="Word Coffee for Moms - Product View 1" class="rounded-lg shadow-md w-full">
+                    <img src="Mom/mom-product-2.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+2';" alt="Word Coffee for Moms - Product View 2" class="rounded-lg shadow-md w-full">
+                    <img src="Mom/mom-product-3.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+3';" alt="Word Coffee for Moms - Product View 3" class="rounded-lg shadow-md w-full">
+                    <img src="Mom/mom-product-4.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+4';" alt="Word Coffee for Moms - Product View 4" class="rounded-lg shadow-md w-full">
+                </div>
             </div>
             <div class="text-left md:order-1">
                 <h2 class="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 uppercase leading-tight">
@@ -173,4 +180,4 @@
         document.getElementById('current-year-products').textContent = new Date().getFullYear();
     </script>
 </body>
-</html>
+</html
