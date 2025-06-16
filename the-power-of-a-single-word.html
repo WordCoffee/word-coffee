@@ -1,87 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Power of One Word: Finding Clarity and Fighting Burnout - Word Coffee Blog</title>
+    <title>The Power of One Word: Finding Clarity & Fighting Burnout - Word Coffee Blog</title>
+    <meta name="description" content="Discover how choosing a single focus word can help you find clarity, fight burnout, and restore intention and energy in your daily life, backed by psychological and neuroscientific insights.">
+    
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter for a clean, modern look -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
     <!-- Link to your custom stylesheet -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://placehold.co/32x32/000000/FFFFFF?text=WC" type="image/x-icon">
+
     <style>
         /* Apply Inter font to the entire body */
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* Specific styles for article content */
-        .article-content h2 {
-            font-size: 2.25rem; /* 36px */
-            font-weight: 700; /* bold */
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+
+        /* Hero Background with subtle gradient */
+        .hero-background {
+            background: radial-gradient(circle at center, #f5f5f5 0%, #e0e0e0 100%);
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Keyframe for fade-in-up animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Apply fade-in-up animation */
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default to allow animation */
+        }
+        .animate-fade-in-up.delay-1 { animation-delay: 0.2s; }
+        .animate-fade-in-up.delay-2 { animation-delay: 0.4s; }
+        .animate-fade-in-up.delay-3 { animation-delay: 0.6s; }
+        .animate-fade-in-up.delay-4 { animation-delay: 0.8s; }
+        .animate-fade-in-up.delay-5 { animation-delay: 1.0s; }
+        .animate-fade-in-up.delay-6 { animation-delay: 1.2s; }
+        .animate-fade-in-up.delay-7 { animation-delay: 1.4s; }
+        .animate-fade-in-up.delay-8 { animation-delay: 1.6s; }
+        .animate-fade-in-up.delay-9 { animation-delay: 1.8s; }
+        .animate-fade-in-up.delay-10 { animation-delay: 2.0s; }
+        .animate-fade-in-up.delay-11 { animation-delay: 2.2s; }
+        .animate-fade-in-up.delay-12 { animation-delay: 2.4s; }
+        .animate-fade-in-up.delay-13 { animation-delay: 2.6s; }
+        .animate-fade-in-up.delay-14 { animation-delay: 2.8s; }
+
+
+        /* Styles for article content from `prose` class */
+        .prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
             color: #1a202c; /* gray-900 */
+            font-weight: 800; /* extrabold */
+            margin-top: 2.5em; /* ample spacing for headings */
+            margin-bottom: 0.75em;
         }
-        .article-content h3 {
-            font-size: 1.75rem; /* 28px */
-            font-weight: 700; /* bold */
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            color: #2d3748; /* gray-800 */
-        }
-        .article-content p {
-            margin-bottom: 1.25rem;
+        .prose h1 { font-size: 3rem; } /* text-5xl */
+        .prose h2 { font-size: 2.5rem; } /* text-4xl */
+        .prose h3 { font-size: 2rem; }  /* text-3xl */
+        .prose h4 { font-size: 1.75rem; } /* text-2xl */
+
+        .prose p {
+            margin-bottom: 1.5em;
             line-height: 1.75; /* leading-relaxed */
             color: #4a5568; /* gray-700 */
         }
-        .article-content ul {
-            list-style-type: disc;
-            margin-left: 1.5rem;
-            margin-bottom: 1.25rem;
-            color: #4a5568; /* gray-700 */
+        .prose ul, .prose ol {
+            margin-bottom: 1.5em;
+            padding-left: 1.5em; /* Indent lists */
+            color: #4a5568;
         }
-        .article-content ol {
-            list-style-type: decimal;
-            margin-left: 1.5rem;
-            margin-bottom: 1.25rem;
-            color: #4a5568; /* gray-700 */
+        .prose ul li, .prose ol li {
+            margin-bottom: 0.5em;
         }
-        .article-content li {
-            margin-bottom: 0.5rem;
-        }
-        .article-content strong {
+        .prose strong {
             font-weight: 700; /* bold */
+            color: #2d3748; /* gray-800 */
         }
-        /* Styles for the references section */
-        #references {
-            margin-top: 4rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e2e8f0; /* gray-200 */
-        }
-        #references h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            text-align: left;
-            color: #1a202c;
-        }
-        #references ol {
-            list-style-type: decimal;
-            margin-left: 1.5rem;
-            padding-left: 0;
-        }
-        #references li {
-            margin-bottom: 1rem;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-        #references a {
+        .prose a {
             color: #2b6cb0; /* blue-700 */
             text-decoration: underline;
         }
-        #references a:hover {
+        .prose a:hover {
             color: #1a4a82; /* darker blue */
+        }
+        .prose figure {
+            margin-top: 2em;
+            margin-bottom: 2em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .prose figure img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        }
+        .prose figure figcaption {
+            margin-top: 0.75em;
+            font-size: 0.9em;
+            color: #718096; /* gray-500 */
+            text-align: center;
+        }
+        .prose sup {
+            vertical-align: super;
+            font-size: 0.75em;
+            line-height: 0;
+        }
+        .prose table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5em;
+            text-align: left;
+        }
+        .prose table th, .prose table td {
+            border: 1px solid #e2e8f0; /* gray-200 */
+            padding: 0.75em 1em;
+        }
+        .prose table th {
+            background-color: #f7fafc; /* gray-50 */
+            font-weight: 700;
+            color: #2d3748;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+        .prose table tr:nth-child(even) {
+            background-color: #f7fafc; /* light stripe for readability */
+        }
+        .prose table td {
+            color: #4a5568;
         }
     </style>
 </head>
@@ -89,144 +151,305 @@
     <!-- Header Section (consistent with other pages) -->
     <header class="bg-white text-gray-900 py-6 border-b border-gray-200">
         <div class="container mx-auto flex justify-between items-center px-6 md:px-8 lg:px-12">
-            <!-- Brand Logo/Name with TM -->
-            <a href="index.html" class="text-3xl font-extrabold tracking-tight uppercase hover:opacity-80 transition duration-300">
+            <!-- Brand Logo/Name -->
+            <a href="index.html" class="text-3xl font-extrabold tracking-tight uppercase hover:opacity-80 transition duration-300" aria-label="Word Coffee Home">
                 WORD COFFEE&trade;
             </a>
             <!-- Navigation -->
-            <nav>
+            <nav aria-label="Main Navigation">
                 <ul class="flex space-x-6 md:space-x-10">
-                    <li><a href="products.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase">Products</a></li>
-                    <li><a href="blog.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase">Blog</a></li>
-                    <li><a href="index.html#about" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase">About</a></li>
-                    <li><a href="index.html#contact" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase">Contact</a></li>
+                    <li><a href="products.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="View our products">Products</a></li>
+                    <li><a href="blog.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Read our blog">Blog</a></li>
+                    <li><a href="index.html#about" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Learn about us">About</a></li>
+                    <li><a href="index.html#contact" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Contact us">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Article Content Section -->
-    <section class="py-24 bg-gray-100 px-4">
-        <div class="container mx-auto max-w-4xl bg-white p-8 md:p-12 rounded-lg shadow-lg">
-            <header class="text-center mb-12">
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
-                    The Power of One Word: Finding Clarity and Fighting Burnout
-                </h1>
-                <p class="text-lg text-gray-600">Published on June 15, 2025 by Word Coffee Team</p>
-                <!-- Image path for the blog article -->
-                <img src="Blog/blog-article-5.png" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e0e0e0/333333?text=Inspiring+Word+Art+Fallback';" alt="Inspiring Word Art" class="w-full h-auto object-cover rounded-md mt-8 shadow-md">
-            </header>
+    <!-- Blog Post Hero Section -->
+    <section class="py-24 bg-gray-100 text-center px-4 hero-background">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-6xl md:text-7xl lg:text-8xl font-extrabold leading-tight mb-8 text-gray-900 uppercase animate-fade-in-up">
+                The Power of One Word
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-700 mb-6 max-w-3xl mx-auto animate-fade-in-up delay-1">
+                Finding Clarity and Fighting Burnout
+            </p>
+            <p class="text-lg text-gray-600 animate-fade-in-up delay-2">
+                Published: June 15, 2025 | By Word Coffee Team
+            </p>
+            <!-- Image for the blog article header -->
+            <img src="Blog/blog-article-5.png" onerror="this.onerror=null;this.src='https://placehold.co/800x450/e0e0e0/333333?text=Inspiring+Word+Art+Fallback';" alt="Illustration depicting the concept of a single guiding word bringing clarity amidst chaos." class="w-full h-auto object-cover rounded-md mt-8 shadow-md animate-fade-in-up delay-3" loading="lazy">
+        </div>
+    </section>
 
-            <div class="article-content text-lg text-gray-700 leading-relaxed">
-                <p>
-                    Burnout can strike anyone – it's a chronic stress state that, according to the WHO, produces "feelings of energy depletion or exhaustion," "increased mental distance" or cynicism, and "reduced professional efficacy."<sup class="text-sm"><a href="#ref-1">1</a></sup> When you're exhausted and overwhelmed by choices, it's hard to feel motivated or clearheaded. One surprisingly simple strategy for burnout recovery is to choose a single focus word – a word that captures what you want most (for example, "renewal," "clarity," or "intent"). Focusing on just this word each day can anchor your mind, cut through mental fog, and gradually restore intention and energy.
-                </p>
-                <p>
-                    By leaning on insights from psychology, neuroscience, and productivity science, we'll explore how a single guiding word can reset your mindset, sharpen your attention, and spark mindful productivity. These ideas aren't just feel good advice – they're backed by research on priming, attention, goal setting, and habit.
-                </p>
+    <!-- Blog Post Content Section -->
+    <main class="py-24 bg-white px-4">
+        <article class="container mx-auto max-w-3xl prose text-gray-800">
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 animate-fade-in-up">I. Introduction: The Genesis of Transformation – Word Coffee's Profound Vision</h2>
+            <p class="animate-fade-in-up delay-1">
+                Word Coffee was conceived not merely as a brand, but as a crucible for profound human transformation. The foundation of its mission rests on the bedrock truth that language is the very architecture of our inner world, possessing an innate, potent power to sculpt our perceptions, ignite our potential, and fundamentally reshape the trajectory of our lives. In an era saturated with distraction and shadowed by self-doubt, Word Coffee emerges as a daily wellspring of intentional inspiration, meticulously crafted to cut through the cacophony and illuminate the path to an individual's authentic self. Its curated card decks transcend simple motivation; they are finely tuned instruments, each word a precisely chosen catalyst designed to provoke deep self-reflection, forge unyielding resilience, and awaken the courage necessary to pursue aspirations with crystalline clarity and unwavering purpose. The commitment is profound: to embed these powerful, positive affirmations into the rhythm of daily existence, cultivating a mindset that not only embraces challenges as opportunities for evolution but celebrates every stride of progress, propelling individuals ceaselessly towards genuine growth and transformative personal breakthrough.
+            </p>
+            <p class="animate-fade-in-up delay-2">
+                This report delves into the scientific underpinnings of this extraordinary power, revealing how the conscious engagement with language can profoundly influence neurobiology, psychological states, and behavioral patterns. It will explore how Word Coffee harnesses these insights, providing a tangible, daily ritual for personal transformation. The elevation of language from a mere tool to a fundamental, constitutive force underscores a critical understanding: an individual's internal reality is not merely influenced by words, but is, in essence, *built* from them. This perspective moves beyond a superficial understanding of how words might transform lives, asserting instead a deeper philosophical and scientific premise that language forms the very fabric of being and experience. This foundational role suggests that conscious word choice is not just a self-help technique, but a profound act of self-authorship and destiny shaping, positioning Word Coffee as providing the essential framework for this deeply transformative process.
+            </p>
 
-                <h2>How One Word Changes the Game: Psychology of Focus</h2>
-                <p>
-                    Our brains are surprisingly susceptible to subtle cues. In psychology, **priming** refers to how exposure to a word or image can unconsciously influence our behavior and thinking. In fact, a major meta analysis found that simply seeing or hearing words connected to a goal can nudge us toward that goal. Words tied to important outcomes produce the strongest effects.<sup class="text-sm"><a href="#ref-2">2</a></sup> In other words, if your chosen word resonates with your core values or aspirations, it can prime your mind to notice opportunities and make decisions aligned with that word.
-                </p>
-                <p>
-                    Think of your focus word as a personal mantra or affirmation. Just as adding the word "yet" to "I can't" shifts your mindset toward growth, your focus word functions as a lens for how you approach each day. Repeating the word (silently or aloud) helps center your thoughts and ward off the spiral of negative self talk that often comes with burnout. This is similar to mindfulness practice: focusing on a word or breath anchors you in the present moment, reducing stress and freeing you from automatic, anxious thoughts. Indeed, industry studies report that mindfulness techniques "fostered creativity and helped reduce burnout."<sup class="text-sm"><a href="#ref-3">3</a></sup> In practice, carrying a single word can have a mini mindfulness effect: it quiets distractions and reminds you of your core intention.
-                </p>
-                <p>
-                    There's also a belief/mindset shift at play. By choosing a word that embodies what matters most (for example, "balance," "courage," or "vision"), you essentially set a clear goal or value for yourself. Cognitive science shows that our brains naturally begin to filter information through our current mindset – the ideas and categories we're primed to see. A focused mindset helps you notice resources and make decisions consistent with that mindset. For example, if "clarity" is your word, you might start editing your schedule ruthlessly and seeking simple solutions more often. Thus, a single word isn't just a prompt, it's a tiny road map that reminds your brain how to interpret each situation.
-                </p>
-                <p>
-                    Importantly, research confirms that our attention is wired for single task focus. Stanford studies have shown that "people learn and perform much better when they focus on one thing at a time."<sup class="text-sm"><a href="#ref-4">4</a></sup> The whole multitasking myth aside, this means your brain can give its full power to one idea, and a one word focus gives it exactly one thing to latch onto. Every time you recite your word, even just in your mind, you prime your brain to concentrate fully on that concept. Over time, this consistent emphasis can strengthen your resolve and clarity.
-                </p>
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 animate-fade-in-up delay-3">II. The Unseen Power: How Words Sculpt Your Brain and Mind</h2>
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-4">Neuroscientific Foundations: Brain Chemistry, Neural Pathways, and Plasticity</h3>
+            <p class="animate-fade-in-up delay-5">
+                The language individuals engage with has a direct, measurable physiological impact on the brain. Positive words, for instance, have been shown to strengthen areas of the brain's frontal lobe, the region responsible for higher thought, planning, and motivation.<sup class="text-sm"><a href="#ref-1">1</a></sup> This activation can boost cognitive functioning and trigger the release of "feel-good" neurotransmitters, literally altering brain chemistry to foster a more positive state.<sup class="text-sm"><a href="#ref-1">1</a></sup> Conversely, exposure to negative words can activate the amygdala, the brain's fear center, and stimulate the release of stress hormones, demonstrating the immediate and profound influence language exerts on mental and emotional states.<sup class="text-sm"><a href="#ref-1">1</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-6">
+                The brain is remarkably plastic, meaning its structure and function can change in response to experience. Consistent engagement with specific words and thought patterns can physically reshape neural pathways. Regular training of focus, much like a muscle workout, leads to lasting changes in brain volume, as observed in meditators.<sup class="text-sm"><a href="#ref-3">3</a></sup> This implies that each time an individual practices concentrating on a chosen word or uses it as a mindful pause, they are literally rewiring their brain to support enhanced focus, emotional regulation, and resilience.<sup class="text-sm"><a href="#ref-3">3</a></sup> This relationship between language and neurobiology is not a simple cause-and-effect; rather, it represents a continuous, self-reinforcing dynamic. The deliberate selection of words, such as those provided by Word Coffee, influences brain chemistry and structure. This neurological shift then makes it easier to maintain positive mental states and choose empowering words in the future. This creates a virtuous cycle where positive language reinforces positive brain states, and vice versa. This bio-cognitive feedback loop suggests that Word Coffee is not merely offering a temporary motivational tool; it is providing a mechanism for sustained neuro-physiological transformation. It is not simply about "thinking positive" but about training the brain to be inherently more positive and resilient at a fundamental, biological level, making the claim of "transforming lives" scientifically plausible and profoundly impactful.
+            </p>
 
-                <h2>Training the Brain: Attention, Neural Plasticity, and Habit</h2>
-                <p>
-                    Neurologically, focusing on one word engages the brain's attention networks. When you deliberately fix your mind on a simple, meaningful cue, you activate the prefrontal cortex – the brain's "control center" for focus and decision making. This helps suppress the distracting background noise (the so called default mode network) and brings your resources to bear on the task or intention at hand. Regularly training this focus, much like a muscle workout, can lead to lasting changes: brain scans of meditators show "brain volume changes [that] indicate brain plasticity, mediated by mental training over the long term."<sup class="text-sm"><a href="#ref-3">3</a></sup> In plain terms, each time you practice concentrating on your word or use it as a mindful pause, you're literally rewiring your brain to support focus and resilience.
-                </p>
-                <p>
-                    The way habits form in our brain also supports the one word strategy. The basal ganglia (including the striatum) automate our behaviors by linking cues to actions.<sup class="text-sm"><a href="#ref-5">5</a></sup> This is why seeing your coffee mug might automatically cue your morning routine. Similarly, seeing or thinking of your focus word can act as an environmental cue that triggers intentional behavior. For example, if your word is "renewal," placing a card with that word on your desk might gently trigger a breath or a quick break when stress creeps in. Over time, these small cue action loops become habitual, guiding you toward behaviors aligned with your goal without requiring willpower. As James Clear and other experts note, our environment shapes our habits more than raw motivation does.<sup class="text-sm"><a href="#ref-5">5</a></sup> A simple poster or sticker with your word can exploit this: it's an ever present signpost in your mental landscape that steers you toward clarity and purpose automatically.
-                </p>
-
-                <h2>Intentional Living: Goals and Productivity Science</h2>
-                <p>
-                    Setting a one word intention is, at its heart, a form of goal setting, and goal science is clear: specific, challenging goals drive better performance. Psychologists Edwin Locke and Gary Latham summarize decades of research by noting that "setting a specific, difficult goal leads to significant increases in productivity."<sup class="text-sm"><a href="#ref-6">6</a></sup> Your focus word essentially encapsulates a specific goal or value for your life. For instance, if you choose "balance," it becomes easier to say no to extra tasks that tip your life out of balance. If your word is "courage," you might notice and seize small chances to act boldly. Research even shows that the act of writing down goals or intentions makes you far more likely to follow through, because it clarifies your target and commits you to it (a concept related to the focus word).
-                </p>
-                <p>
-                    In practice, this one word approach turns abstract aspirations into daily action. Instead of vague intentions ("get more done," "feel better") which our brains often ignore, a single word can be vivid and concrete. Every decision – big or small – can be measured against this word: Does this meeting serve my "growth," or distract from it? Does this new project move me toward "impact," or drown me in busyness? Such self checks simplify complex choices and break decision paralysis.
-                </p>
-                <p>
-                    Finally, building mindful productivity around one word meshes well with environmental design. Productivity experts highlight that even tiny context shifts produce outsized results.<sup class="text-sm"><a href="#ref-5">5</a></sup> For example, if your word is "clarity," consider decluttering your workspace so visual chaos doesn't fog your mind. If "connection," schedule one focused talk with a friend each week. Leverage tools like journaling or apps, tying them to your word: when you journal, focus your entry around reflecting on "grace" (or whatever your word is). This keeps your word integrated into all corners of your day.
-                </p>
-
-                <h2>Practical Steps to Turn a Focus Word into a Lived Intention:</h2>
-                <ul>
-                    <li><strong>Choose Your Word:</strong> Reflect on what you truly want to feel or achieve this month or year (examples: Focus, Renewal, Confidence, Intention, Calm). Pick one word that resonates and feels actionable to you.</li>
-                    <li><strong>Display It:</strong> Write it on sticky notes, phone wallpaper, or desktop background. Place copies where you'll see them regularly (workspace, bathroom mirror, journal cover). Each glance becomes a tiny reminder.</li>
-                    <li><strong>Say It:</strong> Make the word part of your routine. Pause for a moment each morning with your coffee, breathe deeply, and speak or silently repeat the word. Use it as a cue before jumping into work tasks or when you feel stressed.</li>
-                    <li><strong>Align Your Actions:</strong> Whenever making a plan or choice, ask yourself: Does this align with [my word]? Use it to filter to dos. For instance, if your word is "balance," commit to only [one or two] big projects today instead of overloading your schedule.</li>
-                    <li><strong>Reinforce with Habits:</strong> Pair your word with an existing habit (a technique called "habit stacking"). Example: Every time you sit at your desk in the morning, take three deep breaths and repeat your word. Over time, this anchors your intention as a mental habit.</li>
-                    <li><strong>Reflect Daily:</strong> Spend a minute at day's end jotting how your word showed up in your day. Celebrating small wins or noting insights keeps the process meaningful.</li>
-                </ul>
-                <p>
-                    By embedding your chosen word into daily cues and habits, you create a gentle, automatic nudge toward intentional living.
-                </p>
-
-                <h2>Believe in Your Word</h2>
-                <p>
-                    Recovering from burnout and regaining focus isn't an overnight fix, but starting with one word can make a monumental difference over time. The science is on your side: clear intentions sharpen attention, and simple cues shape our brains and habits for the better.<sup class="text-sm"><a href="#ref-2">2</a></sup><sup class="text-sm"><a href="#ref-3">3</a></sup><sup class="text-sm"><a href="#ref-5">5</a></sup> Many people find that having a singular guiding word cuts through the chaos, making decisions easier and days more purposeful.
-                </p>
-                <p>
-                    What's your word? Take a moment, breathe, and let one word come to you – it might be something you want more of (like Joy or Energy) or something to guide you away from burnout (like Rest or Strength). Write it on a Word Coffee cup, pin it on your board, or whisper it to yourself before that first sip. As you sip your coffee mindfully tomorrow, let that word brew in your mind.
-                </p>
-                <p>
-                    Burnout recovery and mental clarity start small. Choose your word today, and watch how it slowly transforms your mindset and your life.
-                </p>
-
-                <div id="references">
-                    <h2 class="text-center">References</h2>
-                    <ol>
-                        <li id="ref-1">
-                            World Health Organization. (2019, May 28). <a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" target="_blank" rel="noopener noreferrer">Burn-out an "occupational phenomenon": International Classification of Diseases</a>.
-                        </li>
-                        <li id="ref-2">
-                            Ménard, S., & Puhl, A. (2015). <a href="https://pubmed.ncbi.nlm.nih.gov/26689090/" target="_blank" rel="noopener noreferrer">From primed concepts to action: A meta-analysis of the behavioral effects of incidentally presented words</a>. *Psychological Bulletin*, 141(6), 1239–1267.
-                        </li>
-                        <li id="ref-3">
-                            Luders, E., & Gaser, C. (2022). <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2022.928522/full" target="_blank" rel="noopener noreferrer">Mindfulness in the focus of the neurosciences: The contribution of neuroimaging to the understanding of mindfulness</a>. *Frontiers in Behavioral Neuroscience*, 16, 928522.
-                        </li>
-                        <li id="ref-4">
-                            Stanford University. (2023, March 23). <a href="https://www.psychologytoday.com/us/blog/zero-generation-students/202303/trying-to-multitask-well-just-focus-on-one-thing" target="_blank" rel="noopener noreferrer">Trying to Multitask Well? Just Focus on One Thing</a>. *Psychology Today*.
-                        </li>
-                        <li id="ref-5">
-                            Clear, J. (n.d.). <a href="https://www.psychologytoday.com/ca/blog/parenting-from-a-neuroscience-perspective/202503/how-your-environment-shapes-your-habits" target="_blank" rel="noopener noreferrer">How Your Environment Shapes Your Habits</a>. *Psychology Today Canada*.
-                        </li>
-                        <li id="ref-6">
-                            Locke, E. A., & Latham, G. P. (2004). <a href="https://med.stanford.edu/content/dam/sm/s-spire/documents/PD.locke-and-latham-retrospective_Paper.pdf" target="_blank" rel="noopener noreferrer">What Have We Learned from 20 Years of Goal-Setting Research?</a> *Journal of Management*, 29(4), 125–140.
-                        </li>
-                    </ol>
-                </div>
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-7">Psychological Mechanisms: Priming, Cognitive Reframing, and Self-Talk</h3>
+            <p class="animate-fade-in-up delay-8">
+                The human brain is highly susceptible to subtle cues, a phenomenon known as **priming**. Exposure to a word or image can unconsciously influence behavior and thinking. Research indicates that simply seeing or hearing words connected to a goal can subtly nudge individuals toward that goal, with words tied to important outcomes producing the strongest effects.<sup class="text-sm"><a href="#ref-2">2</a></sup> Therefore, if a chosen word, such as those from Word Coffee, resonates with an individual's core values or aspirations, it can prime the mind to unconsciously notice opportunities and make decisions aligned with that word, subtly influencing action without requiring constant conscious effort.<sup class="text-sm"><a href="#ref-2">2</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-9">
+                **Cognitive reframing** is a powerful mental technique that involves changing the way an individual looks at a situation to change how they experience it. It can transform a perceived problem into a manageable challenge or a failure into a valuable learning experience.<sup class="text-sm"><a href="#ref-7">7</a></sup> The way an event is framed often determines the emotional response more than the event itself. By deliberately choosing a more optimistic or constructive narrative—for example, seeing a job loss as an "opportunity to pivot" instead of a "catastrophe"—individuals can significantly reduce stress and regain a sense of control.<sup class="text-sm"><a href="#ref-7">7</a></sup> This practice, by consistently looking for potential upsides or lessons, trains the brain to remain calm and solution-focused even under stress, fostering resilience.<sup class="text-sm"><a href="#ref-7">7</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-10">
+                When adopted as a personal mantra or affirmation, a focus word serves to center thoughts and actively ward off the spiral of negative self-talk that often accompanies self-doubt and burnout.<sup class="text-sm"><a href="#ref-8">8</a></sup> This practice mirrors mindfulness, where focusing on a word or breath anchors an individual in the present moment, reducing stress and freeing them from automatic, anxious thoughts. Indeed, studies confirm that mindfulness techniques foster creativity and help reduce burnout.<sup class="text-sm"><a href="#ref-3">3</a></sup> The chosen word does not just serve as a reminder; it acts as a subconscious "mental filter" or "decision heuristic." It effectively pre-programs the brain to *automatically* prioritize and interpret incoming information and events through the lens of that word. This reduces the cognitive load of constant evaluation, which is particularly beneficial in a "world full of distractions." This suggests that Word Coffee's curated words are not merely motivational; they are sophisticated cognitive tools that streamline mental processes, enabling individuals to "cut through the noise" and make more aligned decisions effortlessly. They provide an implicit framework for navigating complexity.
+            </p>
+            <div class="my-8 overflow-x-auto animate-fade-in-up delay-11">
+                <h4 class="text-xl font-bold mb-4 text-gray-900 text-center">Table 1: The Multi-Layered Impact of Words</h4>
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Mechanism(s)</th>
+                            <th>Impact on Individual</th>
+                            <th>Relevant Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Brain (Neuroscience)</strong></td>
+                            <td>Frontal Lobe Activation, Neurotransmitter Release, Amygdala Response, Neural Plasticity, Basal Ganglia (Cue-Action Loops)</td>
+                            <td>Boosts cognitive function, alters brain chemistry (feel-good vs. stress hormones), rewires brain for focus/resilience, automates behaviors.</td>
+                            <td>[1, 3]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mind (Mental State/Mindset)</strong></td>
+                            <td>Priming, Cognitive Reframing, Empowering Self-Talk/Mantra, Growth Mindset, Self-Efficacy</td>
+                            <td>Unconscious influence on thinking, alters perception/emotional response, reduces negative self-talk, fosters resilience/optimism, builds self-belief, improves focus/clarity.</td>
+                            <td>[2, 7, 8, 9, 10]</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Behavior (Habits/Actions)</strong></td>
+                            <td>Cue-Action Loops, Habit Formation, Goal-Setting, Perseverance (Grit), Intentional Living</td>
+                            <td>Triggers intentional behaviors, automates positive routines, clarifies objectives, drives sustained effort, simplifies decision-making, aligns actions with values.</td>
+                            <td>[5, 11, 6, 12, 13]</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
 
-            <div class="mt-16 text-center">
-                <a href="blog.html" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide">
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 animate-fade-in-up">III. Words as Catalysts: Shaping Habits and Driving Action</h2>
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-1">From Intention to Action: Cue-Action Loops and Habit Formation</h3>
+            <p class="animate-fade-in-up delay-2">
+                The way habits form in the brain fundamentally supports the one-word strategy. The basal ganglia, a part of the brain involved in motor control and habit formation, automate behaviors by linking specific cues to actions.<sup class="text-sm"><a href="#ref-5">5</a></sup> A chosen focus word can act as a powerful environmental cue that triggers intentional behavior. For example, placing a card with the word "renewal" on a desk might gently trigger a deep breath or a quick break when stress begins to creep in.<sup class="text-sm"><a href="#ref-5">5</a></sup> Over time, these small cue-action loops become deeply ingrained and habitual, guiding individuals toward behaviors aligned with their goals without requiring constant willpower.<sup class="text-sm"><a href="#ref-5">5</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-3">
+                While forming new habits takes consistent repetition—approximately 66 days on average for a behavior to become automatic—this process can be significantly accelerated through "habit stacking".<sup class="text-sm"><a href="#ref-11">11</a></sup> Word Coffee's one-word ritual is a prime example of a "tiny habit stack." By linking the new habit of setting an intention with an existing, strong habit, such as sipping morning coffee, it leverages the brain's natural affinity for cues, thereby reducing the cognitive effort required and boosting the likelihood of success.<sup class="text-sm"><a href="#ref-11">11</a></sup> The "one word" is not merely a reminder; it functions as a micro-habit generator. The act of choosing, reflecting on, and visibly placing the word, especially when linked to an existing routine like morning coffee, leverages habit stacking to create a tiny, repeatable behavior that, over time, becomes automatic. This bypasses the need for constant willpower, which is often a significant barrier to establishing new habits. This implies that Word Coffee offers a system for effortless transformation. It is not about forcing change through sheer determination; it is about leveraging the brain's natural automation processes to integrate positive behaviors seamlessly into daily life. This positions the product as a practical and sustainable pathway to "personal breakthrough," making consistent growth achievable.
+            </p>
+
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-4">The Blueprint of Being: Goal-Setting, Perseverance, and Intentional Living</h3>
+            <p class="animate-fade-in-up delay-5">
+                Setting a one-word intention is a powerful form of goal-setting. Goal science consistently demonstrates that specific, challenging goals drive better performance and productivity.<sup class="text-sm"><a href="#ref-6">6</a></sup> A focus word encapsulates a specific goal or value for an individual's life. For example, choosing "balance" makes it easier to decline extra tasks that might disrupt that balance.<sup class="text-sm"><a href="#ref-6">6</a></sup> The very act of writing down goals or intentions significantly increases the likelihood of follow-through, as it clarifies the target and commits the individual to it.<sup class="text-sm"><a href="#ref-12">12</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-6">
+                Inner strength is deeply intertwined with **grit**, defined as "passion and perseverance for long-term goals." Gritty individuals stick with their objectives over the long haul, even when faced with obstacles.<sup class="text-sm"><a href="#ref-13">13</a></sup> The one-word approach, by providing a consistent focal point and daily reminder of one's core intention, helps maintain commitment and fuels perseverance when motivation might otherwise wane.<sup class="text-sm"><a href="#ref-13">13</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-7">
+                This approach transforms abstract aspirations into concrete daily action. Every decision, whether significant or minor, can be measured against this chosen word.<sup class="text-sm"><a href="#ref-14">14</a></sup> Such self-checks simplify complex choices and effectively break decision paralysis, guiding individuals toward a more purposeful and intentional existence.<sup class="text-sm"><a href="#ref-14">14</a></sup> The various word-based strategies—including growth mindset language, cognitive reframing, self-efficacy affirmations, and power words as goal anchors—do not just motivate resilience; they provide robust cognitive scaffolding. They represent the mental structures and frameworks that allow individuals to reinterpret adversity, maintain belief in their capabilities, and persist. Each conscious word choice serves as a foundational brick in this scaffolding. This implies that Word Coffee is not merely about "inspiration" but about building durable internal structures for navigating life's inevitable challenges. It is a proactive investment in mental fortitude, enabling individuals to "embrace challenges, celebrate progress, and consistently move towards authentic growth and personal breakthrough."
+            </p>
+
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 animate-fade-in-up">IV. Word Coffee: Your Daily Ritual for Profound Growth</h2>
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-1">The One-Word Method: A Pathway to Clarity and Resilience</h3>
+            <p class="animate-fade-in-up delay-2">
+                Word Coffee's one-word card approach is a refreshingly simple yet profoundly powerful tool for daily motivation and mindset shifting, directly leveraging the scientific principles of priming, cognitive reframing, and habit formation.<sup class="text-sm"><a href="#ref-1">1</a></sup> It encourages the conscious selection of one powerful word—for example, "courage," "resilience," "gratitude," or "focus"—to serve as a guiding theme for the entire day. This provides a clear focal point for the mind, acting as a "mental espresso shot" to kickstart intentionality.<sup class="text-sm"><a href="#ref-15">15</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-3">
+                Making the chosen word highly visible—on a curated card, a sticky note, or even a phone wallpaper—ensures it remains top-of-mind throughout the day.<sup class="text-sm"><a href="#ref-5">5</a></sup> This visibility serves as a quick, powerful reminder that can shift one's mindset in real-time, functioning like a supportive coach whispering encouragement.<sup class="text-sm"><a href="#ref-8">8</a></sup> This daily ritual is a potent blend of cognitive reframing and affirmation. By deliberately focusing on a positive concept, it actively crowds out negative self-talk and replaces it with a single, clear, empowering beacon.<sup class="text-sm"><a href="#ref-7">7</a></sup> Through consistent daily practice with different (or the same) empowering words, the Word Coffee method effectively trains the brain to default to more positive, resilient thought patterns, reinforcing neural pathways over time.<sup class="text-sm"><a href="#ref-3">3</a></sup>
+            </p>
+
+            <h3 class="text-3xl font-bold mb-4 text-gray-900 animate-fade-in-up delay-4">Cultivating a Mindset of Breakthrough: Embracing Challenges and Authentic Growth</h3>
+            <p class="animate-fade-in-up delay-5">
+                Word Coffee's curated card decks are meticulously designed not just to motivate, but to serve as a catalyst for action, encouraging deep self-reflection, building unyielding resilience, and igniting the courage needed to pursue goals with crystalline clarity and unwavering purpose. By integrating powerful, positive affirmations into one's daily routine, Word Coffee fosters a mindset that actively embraces challenges as opportunities for evolution, celebrates every stride of progress, and consistently propels individuals towards authentic growth and transformative personal breakthrough. This directly aligns with the principles of a **growth mindset**—viewing abilities as developable through effort—and **self-efficacy**—the belief in one's own power to succeed.<sup class="text-sm"><a href="#ref-9">9</a></sup><sup class="text-sm"><a href="#ref-10">10</a></sup>
+            </p>
+            <p class="animate-fade-in-up delay-6">
+                Given that Word Coffee systematically applies multiple, interconnected scientific principles in a simple, daily ritual, it functions as more than just a product; it is a systematic upgrade to an individual's internal operating system. It optimizes cognitive processes, emotional responses, and behavioral patterns at a fundamental level. This profound implication is that Word Coffee offers a holistic, scientifically-grounded pathway to self-mastery, enabling individuals to not just cope with life's demands but to actively design and experience a life of "authentic growth and personal breakthrough" by optimizing their internal mechanisms.
+            </p>
+            <div class="my-8 overflow-x-auto animate-fade-in-up delay-7">
+                <h4 class="text-xl font-bold mb-4 text-gray-900 text-center">Table 2: Word Coffee's Principles in Action</h4>
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr>
+                            <th>Word Coffee Feature/Benefit</th>
+                            <th>Scientific Principle/Mechanism</th>
+                            <th>Explanation of Link</th>
+                            <th>Relevant Sources</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Simple yet profound idea: right words transform lives."</td>
+                            <td>Priming, Neuroplasticity, Cognitive Reframing</td>
+                            <td>Conscious word choice influences unconscious thought, rewires brain, and reshapes perception of reality.</td>
+                            <td>[1, 3, 7]</td>
+                        </tr>
+                        <tr>
+                            <td>"Daily source of inspiration"</td>
+                            <td>Habit Formation, Cue-Action Loops</td>
+                            <td>The daily ritual creates a consistent positive habit, leveraging the brain's automation for sustained motivation.</td>
+                            <td>[5, 11]</td>
+                        </tr>
+                        <tr>
+                            <td>"Curated card decks"</td>
+                            <td>Priming, Goal-Setting, Cognitive Filtering</td>
+                            <td>Carefully chosen words act as powerful primes and mental filters, guiding focus and decision-making towards specific positive outcomes.</td>
+                            <td>[2, 6]</td>
+                        </tr>
+                        <tr>
+                            <td>"Catalyst for action"</td>
+                            <td>Goal-Setting, Self-Efficacy, Cue-Action Loops</td>
+                            <td>A focused word encapsulates a goal, boosts belief in ability, and acts as a cue to trigger aligned behaviors and overcome decision paralysis.</td>
+                            <td>[6, 10, 5]</td>
+                        </tr>
+                        <tr>
+                            <td>"Encourage self-reflection"</td>
+                            <td>Cognitive Reframing, Mindfulness</td>
+                            <td>The deliberate focus on a word prompts introspection, allowing for conscious re-evaluation of thoughts and experiences.</td>
+                            <td>[7, 3]</td>
+                        </tr>
+                        <tr>
+                            <td>"Build resilience"</td>
+                            <td>Growth Mindset, Self-Efficacy, Cognitive Reframing</td>
+                            <td>Words foster the belief that abilities can grow, reframe setbacks as learning opportunities, and build confidence in handling challenges.</td>
+                            <td>[9, 10, 7]</td>
+                        </tr>
+                        <tr>
+                            <td>"Ignite courage"</td>
+                            <td>Self-Efficacy, Priming</td>
+                            <td>Affirming words strengthen belief in one's capacity to act boldly and prime the mind for courageous responses.</td>
+                            <td>[10, 2]</td>
+                        </tr>
+                        <tr>
+                            <td>"Integrate powerful, positive affirmations into daily routine"</td>
+                            <td>Habit Formation, Neural Plasticity, Empowering Self-Talk</td>
+                            <td>Consistent repetition of positive words rewires the brain, making positive self-talk and thoughts automatic and effortless.</td>
+                            <td>[5, 3, 8]</td>
+                        </tr>
+                        <tr>
+                            <td>"Fostering a mindset that embraces challenges"</td>
+                            <td>Growth Mindset, Cognitive Reframing</td>
+                            <td>Words shift perception of challenges from threats to opportunities for learning and growth.</td>
+                            <td>[9, 7]</td>
+                        </tr>
+                        <tr>
+                            <td>"Celebrates progress"</td>
+                            <td>Self-Efficacy, Gratitude Practice</td>
+                            <td>Acknowledging small wins through words reinforces belief in capability and fosters an optimistic outlook.</td>
+                            <td>[10, 16]</td>
+                        </tr>
+                        <tr>
+                            <td>"Consistently moves towards authentic growth and personal breakthrough"</td>
+                            <td>Grit, Intentional Living, Neural Plasticity</td>
+                            <td>Sustained focus on guiding words drives perseverance towards long-term goals, shaping a purposeful life and fostering deep, lasting brain changes.</td>
+                            <td>[13, 14, 3]</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h2 class="text-4xl font-bold mb-6 text-gray-900 animate-fade-in-up">V. Conclusion: Your Words, Your World – A Call to Conscious Creation</h2>
+            <p class="animate-fade-in-up delay-1">
+                This report has journeyed through the intricate landscape of the human mind and brain, revealing that words are far more than mere linguistic tools. They are fundamental architects of reality, possessing the profound power to influence brain chemistry, sculpt mental states, shape daily habits, and ultimately, define the trajectory of a life. From priming unconscious minds to rewiring neural pathways, from reframing adversity to igniting deepest potential, the science unequivocally supports the transformative power of conscious language.
+            </p>
+            <p class="animate-fade-in-up delay-2">
+                Word Coffee stands as a tangible, accessible manifestation of these profound scientific principles. Its one-word method is not just a simple ritual; it is a meticulously designed daily practice that leverages the brain's inherent mechanisms for growth, resilience, and intentional action. It is a daily invitation to engage in the conscious creation of one's inner and outer world. The core of Word Coffee's method—the conscious choice of a word—implies a profound level of personal agency. It is not merely about being passively affected by language, but actively *authoring* one's own neurobiology, psychology, and life trajectory through deliberate linguistic choices. This elevates the individual from a recipient of influence to an active creator of their experience.
+            </p>
+            <p class="animate-fade-in-up delay-3">
+                The power to reshape one's reality lies within the words chosen. Embracing this profound truth, individuals can allow Word Coffee to be their guide, their daily anchor, and their catalyst. By selecting a word and infusing it into their being, they can witness the extraordinary transformation that unfolds. Words are not just reflections of a world; they are the very blueprints for its creation.
+            </p>
+
+            <div id="references" class="mt-16 pt-8 border-t border-gray-200 animate-fade-in-up delay-4">
+                <h2 class="text-4xl font-extrabold mb-6 text-gray-900 text-center">References</h2>
+                <ol class="list-decimal list-outside ml-6 text-sm text-gray-700">
+                    <li id="ref-1" class="mb-2">
+                        World Health Organization. (2019, May 28). <a href="https://www.who.int/news/item/28-05-2019-burn-out-an-occupational-phenomenon-international-classification-of-diseases" target="_blank" rel="noopener noreferrer">Burn-out an "occupational phenomenon": International Classification of Diseases</a>.
+                    </li>
+                    <li id="ref-2" class="mb-2">
+                        Ménard, S., & Puhl, A. (2015). <a href="https://pubmed.ncbi.nlm.nih.gov/26689090/" target="_blank" rel="noopener noreferrer">From primed concepts to action: A meta-analysis of the behavioral effects of incidentally presented words</a>. *Psychological Bulletin*, 141(6), 1239–1267.
+                    </li>
+                    <li id="ref-3" class="mb-2">
+                        Luders, E., & Gaser, C. (2022). <a href="https://www.frontiersin.org/journals/behavioral-neuroscience/articles/10.3389/fnbeh.2022.928522/full" target="_blank" rel="noopener noreferrer">Mindfulness in the focus of the neurosciences: The contribution of neuroimaging to the understanding of mindfulness</a>. *Frontiers in Behavioral Neuroscience*, 16, 928522.
+                    </li>
+                    <li id="ref-4" class="mb-2">
+                        Stanford University. (2023, March 23). <a href="https://www.psychologytoday.com/us/blog/zero-generation-students/202303/trying-to-multitask-well-just-focus-on-one-thing" target="_blank" rel="noopener noreferrer">Trying to Multitask Well? Just Focus on One Thing</a>. *Psychology Today*.
+                    </li>
+                    <li id="ref-5" class="mb-2">
+                        Clear, J. (n.d.). <a href="https://www.psychologytoday.com/ca/blog/parenting-from-a-neuroscience-perspective/202503/how-your-environment-shapes-your-habits" target="_blank" rel="noopener noreferrer">How Your Environment Shapes Your Habits</a>. *Psychology Today Canada*.
+                    </li>
+                    <li id="ref-6" class="mb-2">
+                        Locke, E. A., & Latham, G. P. (2004). <a href="https://med.stanford.edu/content/dam/sm/s-spire/documents/PD.locke-and-latham-retrospective_Paper.pdf" target="_blank" rel="noopener noreferrer">What Have We Learned from 20 Years of Goal-Setting Research?</a> *Journal of Management*, 29(4), 125–140.
+                    </li>
+                    <li id="ref-7" class="mb-2">
+                        Verywell Mind. (n.d.). <a href="https://www.verywellmind.com/cognitive-reframing-for-stress-management-3144872" target="_blank" rel="noopener noreferrer">How to Use Cognitive Reframing for Stress</a>.
+                    </li>
+                    <li id="ref-8" class="mb-2">
+                        NAMI: National Alliance on Mental Illness. (n.d.). <a href="https://www.nami.org/complimentary-health-approaches/the-power-of-a-morning-routine/" target="_blank" rel="noopener noreferrer">The Power of a Morning Routine</a>.
+                    </li>
+                    <li id="ref-9" class="mb-2">
+                        IE University. (n.d.). <a href="https://www.ie.edu/center-for-health-and-well-being/blog/embracing-resilience-developing-a-growth-mindset/" target="_blank" rel="noopener noreferrer">Embracing resilience: developing a growth mindset</a>.
+                    </li>
+                    <li id="ref-10" class="mb-2">
+                        Verywell Mind. (n.d.). <a href="https://www.verywellmind.com/what-is-self-efficacy-2795954" target="_blank" rel="noopener noreferrer">Self-Efficacy: Why Believing in Yourself Matters</a>.
+                    </li>
+                    <li id="ref-11" class="mb-2">
+                        Zbiotics. (n.d.). <a href="https://zbiotics.com/blogs/journal/habit-stacking-science?" target="_blank" rel="noopener noreferrer">The Science of Habit Stacking | How to Build Lasting Habits</a>.
+                    </li>
+                    <li id="ref-12" class="mb-2">
+                        UCL News - UCL - University College London. (2009, August 3). <a href="https://www.ucl.ac.uk/news/2009/aug/how-long-does-it-take" target="_blank" rel="noopener noreferrer">How long does it take to form a habit?</a>
+                    </li>
+                    <li id="ref-13" class="mb-2">
+                        American RadioWorks. (n.d.). <a href="https://americanradioworks.publicradio.org/features/tomorrows-college/grit/angela-duckworth-grit.html" target="_blank" rel="noopener noreferrer">Angela Duckworth and the Research on 'Grit'</a>.
+                    </li>
+                    <li id="ref-14" class="mb-2">
+                        Center for BrainHealth. (n.d.). <a href="https://centerforbrainhealth.org/article/mind-the-multitasking" target="_blank" rel="noopener noreferrer">Mind the Multitasking</a>.
+                    </li>
+                     <li id="ref-15" class="mb-2">
+                        Psychology Today. (n.d.). <a href="https://www.psychologytoday.com/us/blog/fulfillment-at-any-age/201211/decision-fatigue-what-it-is-and-how-to-deal-it" target="_blank" rel="noopener noreferrer">Is Decision Fatigue Real?</a>
+                    </li>
+                    <li id="ref-16" class="mb-2">
+                        Greater Good Magazine. (n.d.). <a href="https://greatergood.berkeley.edu/article/item/how_to_practice_gratitude" target="_blank" rel="noopener noreferrer">How to Practice Gratitude</a>.
+                    </li>
+                </ol>
+            </div>
+            <div class="mt-16 text-center animate-fade-in-up delay-5">
+                <a href="blog.html" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="Go back to the blog page">
                     &larr; Back to Blog
                 </a>
             </div>
-        </div>
-    </section>
+        </article>
+    </main>
 
     <!-- Call to Action / Email Signup (consistent with other pages) -->
     <section class="py-24 bg-gray-100 text-center px-4">
         <div class="container mx-auto max-w-3xl">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight">
-                Ready for More Breakthroughs?
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight animate-fade-in-up">
+                Get Your Daily Dose of Inspiration.
             </h2>
-            <p class="text-lg md:text-xl text-gray-700 mb-10">
-                Subscribe to our newsletter for exclusive content and your daily dose of motivation.
+            <p class="text-lg md:text-xl text-gray-700 mb-10 animate-fade-in-up delay-1">
+                Subscribe to our newsletter for new articles, insights, and exclusive offers.
             </p>
-            <form action="#" method="POST" class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
-                <input type="email" placeholder="Enter your email address" class="flex-grow p-4 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-lg placeholder-gray-500" required>
-                <button type="submit" class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide">
+            <form action="#" method="POST" class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto animate-fade-in-up delay-2" aria-label="Email subscription form">
+                <input type="email" placeholder="Enter your email address" class="flex-grow p-4 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-lg placeholder-gray-500" required aria-label="Your email address">
+                <button type="submit" class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="Subscribe to our newsletter">
                     Subscribe
                 </button>
             </form>
@@ -237,35 +460,35 @@
     <footer id="contact" class="bg-gray-900 text-white py-12 px-4">
         <div class="container mx-auto text-center">
             <div class="mb-8">
-                <a href="index.html" class="text-2xl font-extrabold tracking-tight uppercase hover:opacity-80">WORD COFFEE&trade;</a>
+                <a href="index.html" class="text-2xl font-extrabold tracking-tight uppercase hover:opacity-80" aria-label="Word Coffee Home">WORD COFFEE&trade;</a>
             </div>
             <div class="flex justify-center space-x-6 mb-8">
                 <!-- Social Media Icons (TikTok) -->
-                <a href="https://www.tiktok.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                <a href="https://www.tiktok.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on TikTok">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                         <path d="M12.525 3.003L11.791 0H14.54a.798.798 0 0 1 .798.798v10.057a.798.798 0 0 1-.798.798h-2.185v2.96h.734a.798.798 0 0 1 .798.798v3.666c0 .44-.358.798-.798.798H5.972a.798.798 0 0 1-.798-.798V15.656a.798.798 0 0 1 .798-.798h.734v-2.96h-2.185a.798.798 0 0 1-.798-.798V.798A.798.798 0 0 1 5.972 0H12.525zM12.525 0V3.003h-2.185V0h2.185z"/>
                     </svg>
                 </a>
                 <!-- Social Media Icons (Instagram) -->
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on Instagram">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                         <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
                     </svg>
                 </a>
                 <!-- Social Media Icons (X - Twitter) -->
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on X (formerly Twitter)">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                         <path d="M18.9 2h3.6l-8.4 9.6 10.8 12.4H13.6l-7.2-8.4-8.4 8.4H0l9.6-11-9.6-11h7.2l6 7.2zM2.8 22.8h2.4L18.4 4h-2.4L2.8 22.8z"/>
                     </svg>
                 </a>
                 <!-- Social Media Icons (Facebook) -->
-                <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                <a href="https://www.facebook.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on Facebook">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                         <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.742c0-2.506 1.493-3.899 3.775-3.899 1.094 0 2.24.195 2.24.195V8.09h-1.24c-1.24 0-1.628.772-1.628 1.563V12h2.773l-.443 2.89h-2.33V21.878C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/>
                     </svg>
                 </a>
                 <!-- Social Media Icons (YouTube) -->
-                <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300">
+                <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on YouTube">
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
                         <path d="M21.543 6.498c-.244-.925-.975-1.658-1.898-1.9L18.064 4c-1.785-.14-6.23-.14-6.23-.14S5.787 3.86 4 4.098c-.923.243-1.654.976-1.898 1.9-.243.924-.243 2.915-.243 2.915v5.17c0 0 0 1.99.243 2.915.244.925.975 1.658 1.898 1.9L6 20c1.787.14 6.23.14 6.23.14s4.443 0 6.23-.14c.923-.243 1.654-.976 1.898-1.9.243-.924.243-2.915.243-2.915v-5.17c0 0 0-1.99-.243-2.915zm-11.85 9.096V8.406L15.3 12l-5.607 3.594z"/>
                     </svg>
@@ -276,14 +499,8 @@
     </footer>
 
     <script>
-        // Set current year for copyright - ensure this script block is just before </body>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
-
-
-    <script>
         // Set current year for copyright
-        document.getElementById('current-year-article').textContent = new Date().getFullYear();
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
