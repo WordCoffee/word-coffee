@@ -216,7 +216,7 @@
         </div>
     </section>
 
-       <!-- Footer Section: Minimalist and informative -->
+    <!-- Footer Section: Minimalist and informative -->
     <footer id="contact" class="bg-gray-900 text-white py-12 px-4">
         <div class="container mx-auto text-center">
             <div class="mb-8">
@@ -258,12 +258,6 @@
         </div>
     </footer>
 
-    <script>
-        // Set current year for copyright - ensure this script block is just before </body>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
-
-
     <!-- The Modal HTML Structure -->
     <div id="imageModal" class="modal">
         <span class="close-button" onclick="closeModal()">&times;</span>
@@ -271,8 +265,8 @@
     </div>
 
     <script>
-        // Set current year for copyright
-        document.getElementById('current-year-products').textContent = new Date().getFullYear();
+        // Set current year for copyright. Using 'current-year' consistent with the standard footer.
+        document.getElementById('current-year').textContent = new Date().getFullYear();
 
         // Get the modal and the image tag inside it
         const modal = document.getElementById("imageModal");
