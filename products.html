@@ -18,7 +18,7 @@
 
         /* Modal styles - hidden by default */
         .modal {
-            display: none; /* Hidden by default */
+            display: none; /* Hidden by default and crucial for not blocking clicks */
             position: fixed; /* Stay in place */
             z-index: 1000; /* Sit on top */
             left: 0;
@@ -27,16 +27,15 @@
             height: 100%; /* Full height */
             overflow: auto; /* Enable scroll if needed */
             background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
+            align-items: center; /* Center content horizontally */
+            justify-content: center; /* Center content vertically */
+            opacity: 0; /* Start invisible for transition */
+            transition: opacity 0.3s ease-in-out; /* Smooth fade in/out */
         }
 
         .modal.show {
-            display: flex;
-            opacity: 1;
+            display: flex; /* Only show as flex when 'show' class is present */
+            opacity: 1; /* Fully visible */
         }
 
         .modal-content {
@@ -184,10 +183,10 @@
                 <div class="bg-gray-700 p-6 rounded-lg mb-8 shadow-inner">
                     <h3 class="text-2xl font-bold mb-4">Sample Words of Power:</h3>
                     <ul class="list-disc list-inside text-lg space-y-2">
-                        <li>"My strength isn’t measured by what I endure but by how boldly I rise. Again and again."</li>
-                        <li>"I don’t climb mountains to be seen; I climb them to see how far I can go."</li>
+                        <li>"My strength isn’t measured by what I endure but by how boldly I rise—again and again."</li>
+                        <li>"I don’t climb mountains to be seen—I climb them to see how far I can go."</li>
                         <li>"I don’t fear failure because I know every fall is a lesson in strength."</li>
-                        <li>"I empower myself. I don’t just break barriers; I build new roads."</li>
+                        <li>"I empower myself—I don’t just break barriers; I build new roads."</li>
                     </ul>
                     <p class="text-md text-gray-400 mt-4">
                         (Plus 50 more inspiring insights await!)
@@ -273,7 +272,8 @@
 
         // Close the modal if the user clicks anywhere outside the image
         window.onclick = function(event) {
-            if (event.target == modal) {
+            // Check if the clicked element is the modal background itself, not its children
+            if (event.target === modal) {
                 closeModal();
             }
         };
