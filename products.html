@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Coffee - Our Collections</title>
-    <meta name="description" content="Discover Word Coffee's curated card collections for moms and women. Empower your life with daily inspiration and ignite your potential.">
+    <title>Word Coffee - Your Daily Affirmation Toolkit</title>
+    <meta name="description" content="Discover Word Coffee's curated card collections for moms and women. Empower your life with daily inspiration and ignite your potential. Shop directly on Amazon.">
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -80,15 +80,15 @@
         }
 
         /* Image styling within product cards for clickability */
-        .product-image-grid img,
-        .product-main-image {
+        .product-main-image,
+        .product-gallery-image {
             cursor: pointer;
-            transition: transform 0.2s ease-in-out;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
-        .product-image-grid img:hover,
-        .product-main-image:hover {
-            transform: scale(1.03);
+        .product-main-image:hover,
+        .product-gallery-image:hover {
+            transform: scale(1.02);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-md equivalent */
         }
 
@@ -114,23 +114,27 @@
         /* Apply fade-in-up animation */
         .animate-fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default to allow animation */
         }
-        .animate-fade-in-up.delay-1 {
-            animation-delay: 0.2s;
-        }
-        .animate-fade-in-up.delay-2 {
-            animation-delay: 0.4s;
-        }
-        .animate-fade-in-up.delay-3 {
-            animation-delay: 0.6s;
-        }
-        .animate-fade-in-up.delay-4 {
-            animation-delay: 0.8s;
-        }
+        .animate-fade-in-up.delay-1 { animation-delay: 0.1s; }
+        .animate-fade-in-up.delay-2 { animation-delay: 0.2s; }
+        .animate-fade-in-up.delay-3 { animation-delay: 0.3s; }
+        .animate-fade-in-up.delay-4 { animation-delay: 0.4s; }
+        .animate-fade-in-up.delay-5 { animation-delay: 0.5s; }
+        .animate-fade-in-up.delay-6 { animation-delay: 0.6s; }
+        .animate-fade-in-up.delay-7 { animation-delay: 0.7s; }
+        .animate-fade-in-up.delay-8 { animation-delay: 0.8s; }
+        .animate-fade-in-up.delay-9 { animation-delay: 0.9s; }
+        .animate-fade-in-up.delay-10 { animation-delay: 1.0s; }
+        .animate-fade-in-up.delay-11 { animation-delay: 1.1s; }
+        .animate-fade-in-up.delay-12 { animation-delay: 1.2s; }
+        .animate-fade-in-up.delay-13 { animation-delay: 1.3s; }
+        .animate-fade-in-up.delay-14 { animation-delay: 1.4s; }
+        .animate-fade-in-up.delay-15 { animation-delay: 1.5s; }
     </style>
 </head>
 <body class="bg-white text-gray-900 leading-normal tracking-wide">
-    <!-- Header Section (consistent with index.html) -->
+    <!-- Header Section (consistent with other pages) -->
     <header class="bg-white text-gray-900 py-6 border-b border-gray-200">
         <div class="container mx-auto flex justify-between items-center px-6 md:px-8 lg:px-12">
             <!-- Brand Logo/Name with TM -->
@@ -156,93 +160,107 @@
                 Collections That Inspire.
             </h1>
             <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto animate-fade-in-up delay-1">
-                Discover our curated card decks designed to empower, uplift, and ignite action in every phase of life.
+                Discover our meticulously curated card decks designed to empower, uplift, and ignite action in every phase of life.
             </p>
         </div>
     </section>
 
-    <!-- Word Coffee for Moms Collection -->
-    <section id="moms-collection" class="py-24 bg-white px-4">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="relative flex justify-center items-center p-4 md:order-2 animate-fade-in-up delay-1">
-                <!-- Main image for Moms deck - now clickable -->
-                <img src="mom/mom-main.png" data-large-src="mom/mom-main.png" onerror="this.onerror=null;this.src='https://placehold.co/500x500/e0e0e0/333333?text=Word+Coffee+Moms+Deck';" alt="Word Coffee for Moms Card Deck" class="rounded-xl shadow-lg w-full max-w-md hidden md:block product-main-image" onclick="openModal(this.src)" loading="lazy">
-                <!-- Grid for additional Mom product views - now clickable -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 md:mt-0 product-image-grid">
-                    <img src="mom/Screenshot 2025-06-14 183907.png" data-large-src="mom/Screenshot 2025-06-14 183907.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+1';" alt="Word Coffee for Moms - Product View 1" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="mom/Screenshot 2025-06-14 183918.png" data-large-src="mom/Screenshot 2025-06-14 183918.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+2';" alt="Word Coffee for Moms - Product View 2" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="mom/Screenshot 2025-06-14 183934.png" data-large-src="mom/Screenshot 2025-06-14 183934.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+3';" alt="Word Coffee for Moms - Product View 3" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="mom/Screenshot 2025-06-14 183950.png" data-large-src="mom/Screenshot 2025-06-14 183950.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Mom+Image+4';" alt="Word Coffee for Moms - Product View 4" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                </div>
-            </div>
-            <div class="text-left md:order-1 animate-fade-in-up">
-                <h2 class="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 uppercase leading-tight">
-                    Word Coffee for Moms
-                </h2>
-                <p class="text-xl leading-relaxed mb-6 text-gray-700">
-                    A special collection crafted for the superheroes who raise warriors, dreamers, and believers. Each card is a powerful reminder of their boundless love, courage, and endless resilience.
-                </p>
-                <div class="bg-gray-100 p-6 rounded-lg mb-8 shadow-inner animate-fade-in-up delay-1">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900">Sample Words of Wisdom:</h3>
-                    <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
-                        <li>"My strength isn’t measured by what I carry but by the love I give."</li>
-                        <li>"I may not wear a cape, but I am a superhero in every way that matters."</li>
-                        <li>"Motherhood is the art of turning ordinary moments into extraordinary memories."</li>
-                        <li>"My love ripples through generations, shaping lives in ways I’ll never know."</li>
-                    </ul>
-                    <p class="text-md text-gray-600 mt-4">
-                        (And 50 more powerful affirmations inside!)
+    <!-- Our Curated Collections Section (Unified Layout) -->
+    <section class="py-24 bg-white px-4">
+        <div class="container mx-auto">
+            <h2 class="text-5xl md:text-6xl font-extrabold text-center mb-16 text-gray-900 uppercase animate-fade-in-up">
+                Discover Your Daily Dose of Inspiration
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
+                <!-- Word Coffee for Moms Collection Showcase -->
+                <div id="moms-collection" class="bg-gray-50 p-8 lg:p-12 rounded-xl shadow-lg flex flex-col transform transition duration-300 hover:scale-[1.01] animate-fade-in-up delay-2">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 uppercase text-center lg:text-left">
+                        Word Coffee for Moms
+                    </h3>
+                    <p class="text-xl leading-relaxed mb-8 text-gray-700 text-center lg:text-left">
+                        A special collection crafted for the superheroes who raise warriors, dreamers, and believers. Each card is a powerful reminder of their boundless love, courage, and endless resilience. Find your moment of calm and strength amidst the beautiful chaos of motherhood.
                     </p>
+
+                    <!-- Main Product Image for Moms -->
+                    <div class="flex justify-center mb-8 animate-fade-in-up delay-3">
+                        <img src="mom/mom-main.png" data-large-src="mom/mom-main.png" onerror="this.onerror=null;this.src='https://placehold.co/600x600/e0e0e0/333333?text=Word+Coffee+Moms+Deck';" alt="Word Coffee for Moms Card Deck" class="rounded-xl shadow-xl w-full max-w-md product-main-image" onclick="openModal(this.src)" loading="lazy">
+                    </div>
+
+                    <!-- Mini Product Image Gallery for Moms -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 animate-fade-in-up delay-4">
+                        <img src="mom/Screenshot 2025-06-14 183907.png" data-large-src="mom/Screenshot 2025-06-14 183907.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Mom+View+1';" alt="Word Coffee for Moms - Product View 1" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="mom/Screenshot 2025-06-14 183918.png" data-large-src="mom/Screenshot 2025-06-14 183918.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Mom+View+2';" alt="Word Coffee for Moms - Product View 2" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="mom/Screenshot 2025-06-14 183934.png" data-large-src="mom/Screenshot 2025-06-14 183934.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Mom+View+3';" alt="Word Coffee for Moms - Product View 3" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="mom/Screenshot 2025-06-14 183950.png" data-large-src="mom/Screenshot 2025-06-14 183950.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Mom+View+4';" alt="Word Coffee for Moms - Product View 4" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg mb-8 shadow-inner animate-fade-in-up delay-5">
+                        <h4 class="text-2xl font-bold mb-4 text-gray-900">Sample Words of Wisdom:</h4>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                            <li>"My strength isn’t measured by what I carry but by the love I give."</li>
+                            <li>"I may not wear a cape, but I am a superhero in every way that matters."</li>
+                            <li>"Motherhood is the art of turning ordinary moments into extraordinary memories."</li>
+                            <li>"My love ripples through generations, shaping lives in ways I’ll never know."</li>
+                        </ul>
+                        <p class="text-md text-gray-600 mt-4">
+                            (And 50 more powerful affirmations inside!)
+                        </p>
+                    </div>
+                    <!-- Amazon Link for Moms -->
+                    <div class="text-center mt-auto animate-fade-in-up delay-6">
+                        <a href="https://www.amazon.com/your-moms-product-link" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-10 py-5 text-xl font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="Buy Word Coffee for Moms on Amazon">
+                            Buy on Amazon
+                        </a>
+                    </div>
                 </div>
-                <!-- Amazon Link Placeholder -->
-                <a href="https://www.amazon.com/your-moms-product-link" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-10 py-5 text-xl font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide animate-fade-in-up delay-2" aria-label="Buy Word Coffee for Moms on Amazon">
-                    Buy on Amazon
-                </a>
+
+                <!-- Word Coffee for Women Collection Showcase -->
+                <div id="women-collection" class="bg-gray-50 p-8 lg:p-12 rounded-xl shadow-lg flex flex-col transform transition duration-300 hover:scale-[1.01] animate-fade-in-up delay-7">
+                    <h3 class="text-4xl md:text-5xl font-extrabold mb-6 text-gray-900 uppercase text-center lg:text-left">
+                        Word Coffee for Women
+                    </h3>
+                    <p class="text-xl leading-relaxed mb-8 text-gray-700 text-center lg:text-left">
+                        Designed for every woman ready to break barriers and build new roads. This volume is packed with words to ignite ambition, fearless action, and unwavering belief in self. Unleash your inner strength and achieve your greatest potential.
+                    </p>
+
+                    <!-- Main Product Image for Women -->
+                    <div class="flex justify-center mb-8 animate-fade-in-up delay-8">
+                        <img src="Women/Screenshot 2025-06-15 203630.png" data-large-src="Women/Screenshot 2025-06-15 203630.png" onerror="this.onerror=null;this.src='https://placehold.co/600x600/cccccc/333333?text=Word+Coffee+Women+Deck';" alt="Word Coffee for Women Card Deck" class="rounded-xl shadow-xl w-full max-w-md product-main-image" onclick="openModal(this.src)" loading="lazy">
+                    </div>
+
+                    <!-- Mini Product Image Gallery for Women -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 animate-fade-in-up delay-9">
+                        <img src="Women/Screenshot 2025-06-14 183741.png" data-large-src="Women/Screenshot 2025-06-14 183741.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Women+View+1';" alt="Word Coffee for Women - Product View 1" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="Women/Screenshot 2025-06-14 183755.png" data-large-src="Women/Screenshot 2025-06-14 183755.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Women+View+2';" alt="Word Coffee for Women - Product View 2" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="Women/Screenshot 2025-06-14 183809.png" data-large-src="Women/Screenshot 2025-06-14 183809.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Women+View+3';" alt="Word Coffee for Women - Product View 3" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                        <img src="Women/Screenshot 2025-06-14 183820.png" data-large-src="Women/Screenshot 2025-06-14 183820.png" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e0e0e0/333333?text=Women+View+4';" alt="Word Coffee for Women - Product View 4" class="rounded-lg shadow-md w-full h-auto object-cover product-gallery-image" onclick="openModal(this.src)" loading="lazy">
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg mb-8 shadow-inner animate-fade-in-up delay-10">
+                        <h4 class="text-2xl font-bold mb-4 text-gray-900">Sample Words of Power:</h4>
+                        <ul class="list-disc list-inside text-lg text-gray-700 space-y-2">
+                            <li>"My strength isn’t measured by what I endure but by how boldly I rise. Again and again."</li>
+                            <li>"I don’t climb mountains to be seen. I climb them to see how far I can go."</li>
+                            <li>"I don’t fear failure because I know every fall is a lesson in strength."</li>
+                            <li>"I empower myself; I don’t just break barriers; I build new roads."</li>
+                        </ul>
+                        <p class="text-md text-gray-600 mt-4">
+                            (Plus 50 more inspiring insights await!)
+                        </p>
+                    </div>
+                    <!-- Amazon Link for Women -->
+                    <div class="text-center mt-auto animate-fade-in-up delay-11">
+                        <a href="https://www.amazon.com/your-women-product-link" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-10 py-5 text-xl font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="Buy Word Coffee for Women on Amazon">
+                            Buy on Amazon
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Word Coffee for Women Collection -->
-    <section id="women-collection" class="py-24 bg-gray-900 text-white px-4">
-        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="relative flex justify-center items-center p-4 animate-fade-in-up delay-1">
-                <!-- Paths for Word Coffee for Women images - now clickable -->
-                <img src="Women/Screenshot 2025-06-15 203630.png" data-large-src="Women/Screenshot 2025-06-14 183646.png" onerror="this.onerror=null;this.src='https://placehold.co/500x500/cccccc/a1a1aa?text=Word+Coffee+Women+Deck';" alt="Word Coffee for Women Card Deck" class="rounded-xl shadow-lg w-full max-w-md hidden md:block product-main-image" onclick="openModal(this.src)" loading="lazy">
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 md:mt-0 product-image-grid">
-                    <img src="Women/Screenshot 2025-06-14 183741.png" data-large-src="Women/Screenshot 2025-06-14 183741.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Image+1+Fallback';" alt="Word Coffee for Women - Box & Cards" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="Women/Screenshot 2025-06-14 183755.png" data-large-src="Women/Screenshot 2025-06-14 183755.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Image+2+Fallback';" alt="Word Coffee for Women - Features" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="Women/Screenshot 2025-06-14 183809.png" data-large-src="Women/Screenshot 2025-06-14 183809.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Image+3+Fallback';" alt="Word Coffee for Women - Holding Cards" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                    <img src="Women/Screenshot 2025-06-14 183820.png" data-large-src="Women/Screenshot 2025-06-14 183820.png" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e0e0e0/333333?text=Image+4+Fallback';" alt="Word Coffee for Women - Dimensions & Quote" class="rounded-lg shadow-md w-full" onclick="openModal(this.src)" loading="lazy">
-                </div>
-            </div>
-            <div class="text-left animate-fade-in-up">
-                <h2 class="text-5xl md:text-6xl font-extrabold mb-8 uppercase leading-tight">
-                    Word Coffee for Women
-                </h2>
-                <p class="text-xl leading-relaxed mb-6">
-                    Designed for every woman ready to break barriers and build new roads. This volume is packed with words to ignite ambition, fearless action, and unwavering belief in self.
-                </p>
-                <div class="bg-gray-700 p-6 rounded-lg mb-8 shadow-inner animate-fade-in-up delay-1">
-                    <h3 class="text-2xl font-bold mb-4">Sample Words of Power:</h3>
-                    <ul class="list-disc list-inside text-lg space-y-2">
-                        <li>"My strength isn’t measured by what I endure but by how boldly I rise. Again and again."</li>
-                        <li>"I don’t climb mountains to be seen. I climb them to see how far I can go."</li>
-                        <li>"I don’t fear failure because I know every fall is a lesson in strength."</li>
-                        <li>"I empower myself; I don’t just break barriers; I build new roads."</li>
-                    </ul>
-                    <p class="text-md text-gray-400 mt-4">
-                        (Plus 50 more inspiring insights await!)
-                    </p>
-                </div>
-                <!-- Amazon Link Placeholder -->
-                <a href="https://www.amazon.com/your-women-product-link" target="_blank" rel="noopener noreferrer" class="inline-block bg-white text-gray-900 hover:bg-gray-300 px-10 py-5 text-xl font-bold rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide animate-fade-in-up delay-2" aria-label="Buy Word Coffee for Women on Amazon">
-                    Buy on Amazon
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action / Email Signup (consistent with index.html) -->
+    <!-- Call to Action / Email Signup (consistent with other pages) -->
     <section class="py-24 bg-gray-100 text-center px-4">
         <div class="container mx-auto max-w-3xl">
             <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight animate-fade-in-up">Stay Connected for More Inspiration</h2>
