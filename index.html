@@ -1,263 +1,340 @@
 <!DOCTYPE html>
-<html lang="en" style="scroll-behavior: smooth;">
+<html lang="en" class="scroll-smooth">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17373363012"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'AW-17373363012');
-    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Word Coffee - Fuel Your Focus</title>
-    <meta name="description" content="Ignite your potential and find clarity with Word Coffee's curated card decks. Transform your mindset, build resilience, and fuel your daily breakthroughs.">
-    
+    <title>Word Coffee - Fuel Your Focus & Ignite Your Potential</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    
-    <link rel="icon" href="https://placehold.co/32x32/000000/FFFFFF?text=WC" type="image/x-icon">
-
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* Apply Inter font to the entire body */
-        body {
-            font-family: 'Inter', sans-serif;
+        body { font-family: 'Inter', sans-serif; }
+        .hero-gradient {
+            background: radial-gradient(circle at center, #ffffff 0%, #f3f4f6 100%);
         }
-        /* Custom styles to refine the boldtuesday.com aesthetic */
-        .hero-background {
-            /* Adding a very subtle radial gradient for depth, keeps it clean */
-            background: radial-gradient(circle at center, #f5f5f5 0%, #e0e0e0 100%);
-            background-size: cover;
-            background-position: center;
+        .card-shadow {
+            box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
         }
-
-        /* Ensure product images contain their full content */
-        .product-image-container img {
-            width: 100%;
-            height: auto; /* Allow image height to adjust naturally */
-            max-height: 20rem; /* Optional: Set a max height if needed, e.g., h-80 equivalent */
-            object-fit: contain; /* Ensures the entire image is visible, no cropping */
+        .text-glow {
+            text-shadow: 0 0 20px rgba(0,0,0,0.05);
         }
-
-        /* Keyframe for fade-in-up animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-
-        /* Apply fade-in-up animation */
-        .animate-fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-        .animate-fade-in-up.delay-1 {
-            animation-delay: 0.2s;
-        }
-        .animate-fade-in-up.delay-2 {
-            animation-delay: 0.4s;
-        }
-        .animate-fade-in-up.delay-3 {
-            animation-delay: 0.6s;
-        }
-        .animate-fade-in-up.delay-4 {
-            animation-delay: 0.8s;
-        }
+        .animate-up { animation: fadeUp 0.8s ease-out forwards; }
     </style>
 </head>
-<body class="bg-white text-gray-900 leading-normal tracking-wide">
-    <header class="bg-white text-gray-900 py-6 border-b border-gray-200">
-        <div class="container mx-auto flex justify-between items-center px-6 md:px-8 lg:px-12">
-            <a href="index.html" class="text-3xl font-extrabold tracking-tight uppercase hover:opacity-80 transition duration-300" aria-label="Word Coffee Home">
-                WORD COFFEE™
+<body class="bg-white text-gray-900 leading-relaxed selection:bg-black selection:text-white">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase hover:opacity-70 transition-opacity">
+                    Word Coffee<span class="text-[10px] align-top ml-0.5">™</span>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex space-x-10 text-xs font-bold uppercase tracking-widest text-gray-500">
+                <a href="products.html" class="hover:text-black transition-colors">Products</a>
+                <a href="blog.html" class="hover:text-black transition-colors">Blog</a>
+                <a href="#about" class="hover:text-black transition-colors">About</a>
+                <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+            </div>
+
+            <a href="products.html" class="bg-black text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gray-800 transition-all shadow-lg active:scale-95">
+                Shop Now
             </a>
-            <nav aria-label="Main Navigation">
-                <ul class="flex space-x-6 md:space-x-10">
-                    <li><a href="products.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="View our products">Products</a></li>
-                    <li><a href="blog.html" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Read our blog">Blog</a></li>
-                    <li><a href="#about" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Learn about us">About</a></li>
-                    <li><a href="#contact" class="text-lg font-medium hover:text-gray-600 transition duration-300 uppercase" aria-label="Contact us">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
 
-    <section class="relative h-screen flex items-center justify-center bg-gray-100 text-center px-4 py-20 hero-background">
-        <div class="z-10 max-w-5xl mx-auto">
-            <h1 class="text-7xl md:text-8xl lg:text-9xl font-extrabold leading-none mb-8 text-gray-900 uppercase animate-fade-in-up">
-                Fuel Your Focus.
+    <!-- Hero Section -->
+    <section class="hero-gradient relative overflow-hidden pt-20 pb-32 px-6 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto text-center relative z-10">
+            <span class="inline-block px-4 py-1.5 bg-gray-100 text-[10px] font-bold uppercase tracking-[0.3em] rounded-full mb-8 animate-up" style="animation-delay: 0.1s;">Fuel Your Focus</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 tracking-tighter text-glow animate-up" style="animation-delay: 0.2s;">
+                Words that <br class="hidden md:block"> Wake You Up.
             </h1>
-            <p class="text-xl md:text-2xl text-gray-700 mb-12 max-w-3xl mx-auto animate-fade-in-up delay-1">
-                Ignite your potential with words that wake you up. Bold thoughts. Real change.
+            <p class="text-xl md:text-2xl text-gray-500 max-w-2xl mx-auto mb-12 font-light animate-up" style="animation-delay: 0.3s;">
+                Ignite your potential with curated daily intentions. Discover the science-backed power of a single word to transform your focus and grit.
             </p>
-            <a href="products.html" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-10 py-5 text-xl font-bold rounded-full shadow-xl transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide animate-fade-in-up delay-2" aria-label="Explore our product collections">
-                Explore Collections
-            </a>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white px-4">
-        <div class="container mx-auto text-center max-w-4xl">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-8 text-gray-900 leading-tight animate-fade-in-up">
-                More Than Just Words. It's Your Daily Breakthrough.
-            </h2>
-            <p class="text-xl md:text-2xl leading-relaxed text-gray-700 mb-6 animate-fade-in-up delay-1">
-                Word Coffee is a movement designed to help you get unstuck, take bold action, and live with more clarity and courage. We believe the right words, delivered at the right moment, can be the spark for authentic growth.
-            </p>
-            <p class="text-xl md:text-2xl leading-relaxed text-gray-700 animate-fade-in-up delay-2">
-                Each card is a dose of motivation, a moment of reflection, and a gentle nudge towards your true potential.
-            </p>
-        </div>
-    </section>
-
-    <section id="products-preview" class="py-24 bg-gray-100 px-4">
-        <div class="container mx-auto text-center">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-16 text-gray-900 uppercase animate-fade-in-up">Our Core Collections</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                <div class="bg-white p-8 lg:p-12 rounded-xl shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-[1.02] animate-fade-in-up delay-1">
-                    <div class="product-image-container w-full h-64 flex items-center justify-center mb-8">
-                        <img src="mom/mom-main.png" alt="Word Coffee for Moms Deck" class="rounded-lg shadow-md" loading="lazy">
-                    </div>
-                    <h3 class="text-4xl font-bold mb-4 text-gray-900 uppercase">For Mom</h3>
-                    <p class="text-gray-700 text-lg mb-8 leading-relaxed text-center">
-                        A special collection crafted for the superheroes who raise warriors, dreamers, and believers. Ignite your inner strength.
-                    </p>
-                    <a href="products.html#moms-collection" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 uppercase tracking-wide" aria-label="View the Word Coffee for Moms collection">
-                        View Collection
-                    </a>
-                </div>
-
-                <div class="bg-white p-8 lg:p-12 rounded-xl shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-[1.02] animate-fade-in-up delay-2">
-                    <div class="product-image-container w-full h-64 flex items-center justify-center mb-8">
-                        <img src="Women/Screenshot 2025-06-15 203630.png" alt="Word Coffee for Women Deck" class="rounded-lg shadow-md" loading="lazy">
-                    </div>
-                    <h3 class="text-4xl font-bold mb-4 text-gray-900 uppercase">For Women</h3>
-                    <p class="text-gray-700 text-lg mb-8 leading-relaxed text-center">
-                        Designed for every woman ready to break barriers and build new roads. Fuel your ambition and fearless action.
-                    </p>
-                    <a href="products.html#women-collection" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 uppercase tracking-wide" aria-label="View the Word Coffee for Women collection">
-                        View Collection
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 bg-white px-4">
-        <div class="container mx-auto text-center max-w-5xl">
-            <h2 class="text-5xl md:text-6xl font-extrabold mb-16 text-gray-900 uppercase animate-fade-in-up">Latest Insights from Our Blog</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                <article class="bg-gray-50 p-8 rounded-xl shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-[1.02] animate-fade-in-up delay-1">
-                    <img src="Blog/blog-article-5.png" onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333333?text=Article+Image+1+Fallback';" alt="Illustration for 'The Power of a Single Word' blog post" class="w-full h-48 object-cover rounded-md mb-6 shadow-sm" loading="lazy">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900 leading-tight">The Power of a Single Word: Fueling Your Day</h3>
-                    <p class="text-gray-700 text-base mb-6 text-center">
-                        Explore how a single, well chosen word can shift your mindset and inspire profound action, transforming your daily routine.
-                    </p>
-                    <a href="the-power-of-a-single-word.html" class="text-gray-900 font-semibold hover:text-gray-700 transition duration-300 uppercase text-sm" aria-label="Read more about the power of a single word"> Read More →</a>
-                </article>
-
-                <article class="bg-gray-50 p-8 rounded-xl shadow-lg flex flex-col items-center transform transition duration-300 hover:scale-[1.02] animate-fade-in-up delay-2">
-                    <img src="Blog/blog-article-4.png" onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333333?text=Article+Image+2+Fallback';" alt="Illustration for 'Finding Clarity Amidst the Chaos' blog post" class="w-full h-48 object-cover rounded-md mb-6 shadow-sm" loading="lazy">
-                    <h3 class="text-2xl font-bold mb-4 text-gray-900 leading-tight">Finding Clarity Amidst the Chaos: A Guide for Moms</h3>
-                    <p class="text-gray-700 text-base mb-6 text-center">
-                        For the supermoms balancing it all, discover practical tips and the power of motivational words to find your calm and focus.
-                    </p>
-                    <a href="finding-clarity-amidst-chaos.html" class="text-gray-900 font-semibold hover:text-gray-700 transition duration-300 uppercase text-sm" aria-label="Read more about finding clarity for moms"> Read More →</a>
-                </article>
-            </div>
-            <div class="mt-16 text-center animate-fade-in-up delay-3">
-                <a href="blog.html" class="inline-block bg-gray-900 text-white hover:bg-gray-700 px-8 py-4 rounded-full font-bold text-lg shadow-lg transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="View all blog posts">
-                    View All Blog Posts →
+            <div class="flex flex-col sm:flex-row justify-center gap-6 animate-up" style="animation-delay: 0.4s;">
+                <a href="products.html" class="bg-black text-white px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest hover:shadow-2xl transition-all">
+                    Explore Collections
+                </a>
+                <a href="#science" class="px-10 py-5 rounded-full text-sm font-bold uppercase tracking-widest border border-gray-200 hover:bg-gray-50 transition-all">
+                    Why it Works
                 </a>
             </div>
         </div>
+        
+        <!-- Decorative Elements -->
+        <div class="absolute top-1/2 left-0 w-64 h-64 bg-gray-50 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 opacity-50"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-gray-100 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 opacity-50"></div>
     </section>
 
-    <section id="about" class="py-24 bg-gray-900 text-white px-4">
-        <div class="container mx-auto max-w-4xl">
-            <div class="text-left animate-fade-in-up">
-                <h2 class="text-5xl md:text-6xl font-extrabold mb-8 leading-tight">
-                    Our Story
-                </h2>
-                <p class="text-xl leading-relaxed mb-6">
-                    At Word Coffee, we embarked on a journey rooted in a powerful belief: that words are the very architecture of our inner world. We saw how language possesses an innate, potent power to sculpt our perceptions, ignite our potential, and fundamentally reshape the trajectory of our lives.
+    <!-- The Mission -->
+    <section id="about" class="py-32 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="grid md:grid-cols-1 gap-16 text-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-10 leading-tight">More Than Just Words. <br>It's Your Daily Breakthrough.</h2>
+                    <div class="space-y-8 text-lg md:text-xl text-gray-500 font-light leading-relaxed">
+                        <p>
+                            Word Coffee is a movement designed to help you get unstuck, take bold action, and live with more clarity. We believe the right words, delivered at the right moment, are the architecture of our inner world.
+                        </p>
+                        <p>
+                            In a world saturated with distraction, our curated card decks serve as finely tuned instruments. Each word is a precisely chosen catalyst designed to provoke self-reflection, forge unyielding resilience, and awaken your true potential.
+                        </p>
+                    </div>
+                    <div class="mt-16 flex justify-center space-x-8">
+                        <div class="text-center">
+                            <span class="block text-3xl font-extrabold text-black">50+</span>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Daily Affirmations</span>
+                        </div>
+                        <div class="w-px h-12 bg-gray-100"></div>
+                        <div class="text-center">
+                            <span class="block text-3xl font-extrabold text-black">Science</span>
+                            <span class="text-[10px] uppercase tracking-widest font-bold text-gray-400">Backed Methodology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Science Section -->
+    <section id="science" class="py-32 px-6 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-20 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-[10px] font-bold uppercase tracking-[0.3em] text-gray-400 mb-4 block">The Neuro-Logic</span>
+                    <h2 class="text-4xl md:text-5xl font-extrabold mb-8 tracking-tight">How Words Sculpt Your Brain.</h2>
+                    <p class="text-lg text-gray-600 mb-8 font-light">
+                        Language has a direct, measurable physiological impact. Research shows that positive words strengthen the frontal lobe—the region responsible for planning and motivation—triggering the release of feel-good neurotransmitters.
+                    </p>
+                    <ul class="space-y-6">
+                        <li class="flex items-start space-x-4">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-1">1</div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wider mb-1">Neural Plasticity</h4>
+                                <p class="text-gray-500 text-sm">Consistent engagement with specific intentions physically reshapes neural pathways for resilience.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start space-x-4">
+                            <div class="w-6 h-6 rounded-full bg-black text-white flex items-center justify-center text-[10px] font-bold flex-shrink-0 mt-1">2</div>
+                            <div>
+                                <h4 class="font-bold text-sm uppercase tracking-wider mb-1">Subconscious Priming</h4>
+                                <p class="text-gray-500 text-sm">A chosen word acts as a mental filter, nudging your brain to notice opportunities aligned with your goal.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="md:w-1/2 bg-white p-12 rounded-[3rem] shadow-xl border border-gray-100">
+                    <div class="text-center">
+                        <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-10">Try an Anchor Word Now</h4>
+                        <div id="word-generator" class="min-h-[160px] flex items-center justify-center">
+                            <h3 id="current-word" class="text-5xl md:text-7xl font-black italic tracking-tighter">CLARITY</h3>
+                        </div>
+                        <button onclick="generateWord()" class="mt-10 px-8 py-3 bg-gray-100 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-black hover:text-white transition-all">Generate My Focus</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections -->
+    <section class="py-32 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-[10px] font-bold mb-16 text-center uppercase tracking-[0.5em] text-gray-400">Core Collections</h2>
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- For Moms -->
+                <div class="group bg-gray-50 rounded-[3rem] p-12 transition-all hover:bg-white hover:shadow-2xl border border-transparent hover:border-gray-100">
+                    <div class="aspect-square bg-gray-200 rounded-2xl mb-10 overflow-hidden relative">
+                        <!-- Mockup Image Fallback -->
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold uppercase tracking-widest text-xs">For Moms Deck</div>
+                        <img src="mom/mom-main.png" onerror="this.style.display='none'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Word Coffee for Moms">
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4 uppercase tracking-tighter">Word Coffee for Moms</h3>
+                    <p class="text-gray-500 mb-8 font-light text-lg">
+                        Crafted for the superheroes raising the next generation. A dose of calm and strength amidst the beautiful chaos of motherhood.
+                    </p>
+                    <div class="bg-white/50 p-6 rounded-2xl mb-10 text-sm italic text-gray-600 border border-gray-100">
+                        "My strength isn’t measured by what I carry but by the love I give."
+                    </div>
+                    <a href="https://www.amazon.com/dp/B0F87RXTVC" target="_blank" class="inline-block bg-black text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:scale-105">Shop on Amazon</a>
+                </div>
+
+                <!-- For Women -->
+                <div class="group bg-gray-50 rounded-[3rem] p-12 transition-all hover:bg-white hover:shadow-2xl border border-transparent hover:border-gray-100">
+                    <div class="aspect-square bg-gray-200 rounded-2xl mb-10 overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-bold uppercase tracking-widest text-xs">For Women Deck</div>
+                        <img src="Women/Screenshot 2025-06-15 203630.png" onerror="this.style.display='none'" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Word Coffee for Women">
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4 uppercase tracking-tighter">Word Coffee for Women</h3>
+                    <p class="text-gray-500 mb-8 font-light text-lg">
+                        Designed for the barrier-breakers and road-builders. Ignite your ambition and unwavering belief in your own inherent power.
+                    </p>
+                    <div class="bg-white/50 p-6 rounded-2xl mb-10 text-sm italic text-gray-600 border border-gray-100">
+                        "I don’t climb mountains to be seen. I climb them to see how far I can go."
+                    </div>
+                    <a href="https://www.amazon.com/dp/B0F87JDPD4" target="_blank" class="inline-block bg-black text-white px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest transition-all hover:scale-105">Shop on Amazon</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Stories / Blog -->
+    <section class="py-32 px-6 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <span class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.3em] mb-2 block">Insights</span>
+                    <h2 class="text-4xl font-bold tracking-tight">The Word Coffee Blog</h2>
+                </div>
+                <a href="blog.html" class="text-xs font-bold uppercase tracking-widest border-b-2 border-black pb-1 hover:text-gray-600 transition-colors">All Posts →</a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <article class="group bg-white rounded-3xl overflow-hidden card-shadow">
+                    <div class="aspect-video bg-gray-100 overflow-hidden">
+                        <div class="w-full h-full bg-neutral-200 group-hover:scale-110 transition-transform duration-700"></div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-xl mb-3 line-clamp-2">The Art of Bold Action: Moving Beyond Fear</h4>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Master the art of bold action by understanding and moving beyond fear. Discover strategies like growth mindset and grit.</p>
+                        <a href="the-art-of-bold-action.html" class="text-[10px] font-bold uppercase tracking-widest text-black group-hover:underline">Read Article</a>
+                    </div>
+                </article>
+
+                <article class="group bg-white rounded-3xl overflow-hidden card-shadow">
+                    <div class="aspect-video bg-gray-100 overflow-hidden">
+                        <div class="w-full h-full bg-neutral-300 group-hover:scale-110 transition-transform duration-700"></div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-xl mb-3 line-clamp-2">Finding Clarity Amidst the Chaos</h4>
+                        <p class="text-gray-700 text-sm mb-6 line-clamp-3 font-semibold italic">Specifically for moms balancing it all.</p>
+                        <a href="finding-clarity-amidst-chaos.html" class="text-[10px] font-bold uppercase tracking-widest text-black group-hover:underline">Read Article</a>
+                    </div>
+                </article>
+
+                <article class="group bg-white rounded-3xl overflow-hidden card-shadow">
+                    <div class="aspect-video bg-gray-100 overflow-hidden">
+                        <div class="w-full h-full bg-neutral-100 group-hover:scale-110 transition-transform duration-700"></div>
+                    </div>
+                    <div class="p-8">
+                        <h4 class="font-bold text-xl mb-3 line-clamp-2">The Journey to Authentic Self</h4>
+                        <p class="text-gray-500 text-sm mb-6 line-clamp-3">Embark on a path of self-discovery and align with your true essence using daily word practices.</p>
+                        <a href="the-journey-to-authentic-self.html" class="text-[10px] font-bold uppercase tracking-widest text-black group-hover:underline">Read Article</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Deep Dive -->
+    <section class="py-32 px-6 bg-black text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-5xl font-extrabold mb-12 tracking-tighter">The Word Coffee Story</h2>
+            <div class="space-y-10 text-lg md:text-xl text-gray-400 font-light leading-relaxed text-left md:text-center">
+                <p>
+                    At Word Coffee, we embarked on a journey rooted in a powerful belief: that <span class="text-white font-medium">words are the very architecture of our inner world</span>. We saw how language possesses an innate, potent power to sculpt our perceptions and reshape the trajectory of our lives.
                 </p>
-                <p class="text-xl leading-relaxed mb-6">
+                <p>
                     In a world brimming with distractions and clouded by self-doubt, our mission became clear. We wanted to provide a daily wellspring of intentional inspiration, meticulously crafted to help you cut through the noise and illuminate your path to an authentic self.
                 </p>
-                <p class="text-xl leading-relaxed mb-6">
-                    Our curated card decks are more than just motivational tools; they are finely tuned instruments. Each word is a precisely chosen catalyst, designed to provoke deep self-reflection, forge unyielding resilience, and awaken the courage you need to pursue your aspirations with crystalline clarity and unwavering purpose.
-                </p>
-                <p class="text-xl leading-relaxed">
-                    We are profoundly committed to helping you embed these powerful, positive affirmations into the rhythm of your daily existence. This process cultivates a mindset that not only embraces challenges as opportunities for evolution but also celebrates every stride of progress. It's about propelling you ceaselessly towards genuine growth and transformative personal breakthroughs, one intentional word at a time.
+                <p>
+                    Our commitment is to help you embed these powerful, positive affirmations into the rhythm of your daily existence, propelling you ceaselessly towards genuine growth and transformative breakthroughs, one intentional word at a time.
                 </p>
             </div>
         </div>
     </section>
 
-    <section class="py-24 bg-gray-100 text-center px-4">
-        <div class="container mx-auto max-w-3xl">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-gray-900 leading-tight animate-fade-in-up">
-                Join the Word Coffee Movement.
-            </h2>
-            <p class="text-lg md:text-xl text-gray-700 mb-10 animate-fade-in-up delay-1">
-                Receive your daily dose of motivation and exclusive updates directly to your inbox.
-            </p>
-            <form action="https://formspree.io/f/xyzpazlz" method="POST" class="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto animate-fade-in-up delay-2" aria-label="Email subscription form">
-                <input type="email" name="email" placeholder="Enter your email address" class="flex-grow p-4 rounded-full border-2 border-gray-300 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent text-lg placeholder-gray-500" required aria-label="Your email address">
-                <button type="submit" class="bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out transform hover:scale-105 uppercase tracking-wide" aria-label="Subscribe to our newsletter">
+    <!-- Newsletter -->
+    <section class="py-32 px-6 bg-gray-50 border-b border-gray-100">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-extrabold mb-6 tracking-tight">Join the Movement.</h2>
+            <p class="text-xl text-gray-500 mb-12 font-light">Receive your daily dose of motivation and exclusive collection updates.</p>
+            <form action="#" class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Your Email Address" class="flex-1 px-8 py-5 rounded-full border-2 border-gray-100 focus:outline-none focus:border-black transition-all bg-white text-sm" required>
+                <button class="bg-black text-white px-10 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl">
                     Subscribe
                 </button>
             </form>
         </div>
     </section>
 
-    <footer id="contact" class="bg-gray-900 text-white py-12 px-4">
-        <div class="container mx-auto text-center">
-            <div class="mb-8">
-                <a href="index.html" class="text-2xl font-extrabold tracking-tight uppercase hover:opacity-80" aria-label="Word Coffee Home">WORD COFFEE™</a>
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-12 pb-12 border-b border-gray-100">
+                <div class="flex flex-col gap-4">
+                    <a href="index.html" class="text-2xl font-extrabold tracking-tighter uppercase">Word Coffee™</a>
+                    <p class="text-gray-400 text-sm max-w-xs font-light">Fuel your focus. Ignite your potential. Bold thoughts for real change.</p>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-12 md:gap-20 uppercase tracking-widest text-[10px] font-bold">
+                    <div class="flex flex-col gap-4">
+                        <span class="text-gray-300">Shop</span>
+                        <a href="products.html" class="hover:text-black">Moms Collection</a>
+                        <a href="products.html" class="hover:text-black">Women Collection</a>
+                        <a href="#" class="hover:text-black">Gift Cards</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-gray-300">Learn</span>
+                        <a href="blog.html" class="hover:text-black">Our Blog</a>
+                        <a href="#science" class="hover:text-black">The Science</a>
+                        <a href="#about" class="hover:text-black">Our Story</a>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <span class="text-gray-300">Support</span>
+                        <a href="#" class="hover:text-black">Shipping</a>
+                        <a href="#" class="hover:text-black">Privacy</a>
+                        <a href="#" class="hover:text-black">Contact</a>
+                    </div>
+                </div>
             </div>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://www.tiktok.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on TikTok">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                        <path d="M12.525 3.003L11.791 0H14.54a.798.798 0 0 1 .798.798v10.057a.798.798 0 0 1-.798.798h-2.185v2.96h.734a.798.798 0 0 1 .798.798v3.666c0 .44-.358.798-.798.798H5.972a.798.798 0 0 1-.798-.798V15.656a.798.798 0 0 1 .798-.798h.734v-2.96h-2.185a.798.798 0 0 1-.798-.798V.798A.798.798 0 0 1 5.972 0H12.525zM12.525 0V3.003h-2.185V0h2.185z"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on Instagram">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                        <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.75a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5zM12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
-                    </svg>
-                </a>
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on X (formerly Twitter)">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                        <path d="M18.9 2h3.6l-8.4 9.6 10.8 12.4H13.6l-7.2-8.4-8.4 8.4H0l9.6-11-9.6-11h7.2l6 7.2zM2.8 22.8h2.4L18.4 4h-2.4L2.8 22.8z"/>
-                    </svg>
-                </a>
-                <a href="https://www.facebook.com/p/Word-Coffee-61579109863560/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on Facebook">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878V14.89h-2.54V12h2.54V9.742c0-2.506 1.493-3.899 3.775-3.899 1.094 0 2.24.195 2.24.195V8.09h-1.24c-1.24 0-1.628.772-1.628 1.563V12h2.773l-.443 2.89h-2.33V21.878C18.343 21.128 22 16.991 22 12c0-5.523-4.477-10-10-10z"/>
-                    </svg>
-                </a>
-                <a href="https://www.youtube.com/yourchannel" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-white transition duration-300" aria-label="Visit us on YouTube">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24">
-                        <path d="M21.543 6.498c-.244-.925-.975-1.658-1.898-1.9L18.064 4c-1.785-.14-6.23-.14-6.23-.14S5.787 3.86 4 4.098c-.923.243-1.654.976-1.898 1.9-.243.924-.243 2.915-.243 2.915v5.17c0 0 0 1.99.243 2.915.244.925.975 1.658 1.898 1.9L6 20c1.787.14 6.23.14 6.23.14s4.443 0 6.23-.14c.923-.243 1.654-.976 1.898-1.9.243-.924.243-2.915.243-2.915v-5.17c0 0 0-1.99-.243-2.915zm-11.85 9.096V8.406L15.3 12l-5.607 3.594z"/>
-                    </svg>
-                </a>
+            <div class="pt-12 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-400 font-medium uppercase tracking-widest gap-6">
+                <div>© 2026 Word Coffee. A T2 Holdings LLC Brand.</div>
+                <div class="flex space-x-8">
+                    <a href="#" class="hover:text-black transition-colors">Instagram</a>
+                    <a href="#" class="hover:text-black transition-colors">TikTok</a>
+                    <a href="#" class="hover:text-black transition-colors">YouTube</a>
+                </div>
             </div>
-            <p class="text-gray-500 text-sm">© <span id="current-year"></span> Word Coffee. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Set current year for copyright
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        const words = ["CLARITY", "FOCUS", "GRIT", "BOLD", "INTENTION", "RESILIENT", "RENEWAL", "PRESENCE", "COURAGE"];
+        let lastWord = "CLARITY";
+
+        function generateWord() {
+            const wordEl = document.getElementById('current-word');
+            let newWord;
+            do {
+                newWord = words[Math.floor(Math.random() * words.length)];
+            } while (newWord === lastWord);
+            
+            lastWord = newWord;
+            
+            // Simple fade out/in effect
+            wordEl.style.opacity = '0';
+            wordEl.style.transform = 'translateY(10px)';
+            
+            setTimeout(() => {
+                wordEl.textContent = newWord;
+                wordEl.style.opacity = '1';
+                wordEl.style.transform = 'translateY(0)';
+            }, 300);
+        }
+
+        // Initialize transition styles for the generator
+        document.getElementById('current-word').style.transition = 'all 0.3s ease-out';
     </script>
+
+</body>
+</html>
 </body>
 </html>
